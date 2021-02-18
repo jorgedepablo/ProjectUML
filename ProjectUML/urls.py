@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 from ProjectUML.views import home
-from gymkhana.views import start
+from gymkhana.views import start, quest, response
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home),
     path('start/', start),
+    path('first_question/', quest),
+    path('test1/', response),
 ]
