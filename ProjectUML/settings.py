@@ -54,7 +54,7 @@ ROOT_URLCONF = 'ProjectUML.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/pi/projects/uml/ProjectUML/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

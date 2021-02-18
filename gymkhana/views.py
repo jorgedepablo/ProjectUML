@@ -6,7 +6,6 @@ def start(request):
 
     return HttpResponse('Init the gymkhana app...')
 
-
 def quest(request): 
 
     return render(request, "first_question.html")
