@@ -1,12 +1,5 @@
-from django.http import HttpResponse
+from django.http import render, HttpResponse
 
-def home(request):
+def index(request):
 
-    template="""
-    <html> 
-    <h1>
-    WELCOME TO UML PROJECT 
-    </h1> 
-    </html>"""
-
-    return HttpResponse(template)
+    return render(request, 'index.html')

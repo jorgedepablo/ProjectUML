@@ -4,7 +4,7 @@ from django.shortcuts import render, HttpResponse
 
 def start(request): 
 
-    return HttpResponse('Init the gymkhana app...')
+    return render(request, 'start.html')
 
 
 def quest(request): 
@@ -16,9 +16,9 @@ def response(request):
 
     key = 'De Pablo'
 
-    if  str(request.GET['surname']) != key: 
+    if str(request.GET['surname']) != key: 
         msg = 'The surname %s is not good enough' %request.GET['surname']
-    else: 
+    else:
         msg = 'The best surname ever, Mr. %s' %request.GET['surname']
 
     return HttpResponse(msg)
