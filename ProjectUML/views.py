@@ -1,4 +1,5 @@
-from django.http import render, HttpResponse
+#from django.http import HttpResponse
+from django.shortcuts import render, HttpResponse 
 
 def index(request):
 
