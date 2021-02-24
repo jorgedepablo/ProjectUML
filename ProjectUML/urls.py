@@ -21,9 +21,8 @@ from gymkhana.views import start, quest, response
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('index/', index),
-    path('start/', start),
+    path('', index, name="Home"),
+    path('start/', start, name="Start"),
     path('challenge_1/', quest),
     path('response_1/', response),
 ]
