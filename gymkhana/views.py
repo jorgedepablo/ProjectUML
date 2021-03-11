@@ -4,7 +4,7 @@ from django.shortcuts import render, HttpResponse
 
 def start(request): 
 
-    return HttpResponse('Init the gymkhana app...')
+    return render(request, 'start.html')
 
 
 def quest(request): 
