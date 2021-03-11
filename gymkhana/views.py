@@ -7,12 +7,12 @@ def start(request):
     return render(request, 'start.html')
 
 
-def quest(request): 
+def quest_1(request): 
 
     return render(request, 'first_question.html')
 
 
-def response(request): 
+def response_1(request): 
 
     key = 'De Pablo'
 

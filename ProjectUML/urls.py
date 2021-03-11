@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from ProjectUML.views import index
-from gymkhana.views import start, quest, response
+from ProjectUML.views import home
+from gymkhana.views import start, quest_1, response_1
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('start/', start),
-    path('first_question/', quest),
+    path('question-1/', quest_1),
+    path('response-1/', response_1)
 ]
