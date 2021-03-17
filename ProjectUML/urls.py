@@ -23,10 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('start/', start),
-    path('question-1/', quest_1),
+    path('game-1/', game_1),
     path('response-1/', response_1),
-    path('question-2/', quest_2),
+    path('game-2/', game_2),
     path('response-2/', response_2),
-    path('question-3/', quest_3),
+    path('game-3/', game_3),
     path('response-3/', response_3)
 ]
