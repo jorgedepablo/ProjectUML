@@ -1,11 +1,12 @@
 <html>
     <head>
         <title> Challenge Flowchart Diagram </title>
+        {% load static %}
 
         <body>
             <h3> Resuelve este diagrama de flujo para halla la palabra clave </h3>
             
-            <img src="media/game_2.svg"> 
+            <img src="{% static 'media/game_2.svg' %}"> 
 
             <form action="/response-1/" method="GET">
                 <input type="text" name="keyword" id="">
