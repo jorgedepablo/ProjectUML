@@ -25,25 +25,22 @@ def response_1(request):
     key = 'Nal Hutta'
 
     if str(request.GET['keyword']) != key: 
-        msg = 'The surname %s is not good enough' %request.GET['surname']
         template = 'wrong.html'
     else:
-        msg = 'The best surname ever, Mr. %s' %request.GET['surname']
-        # recondicr a success
         template = 'success.html'
 
-    return HttpResponse(msg)
+    return render(request, template)
 
 def response_2(request): 
 
-    key = 'De Pablo'
+    key = 'Fight zombies'
 
     if str(request.GET['surname']) != key: 
-        msg = 'The surname %s is not good enough' %request.GET['surname']
+        template = 'wrong.html'
     else:
-        msg = 'The best surname ever, Mr. %s' %request.GET['surname']
+        template = 'success.html'
 
-    return HttpResponse(msg)
+    return render(request, template)
 
 def response_3(request): 
 

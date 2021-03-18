@@ -1,11 +1,23 @@
 <html>
     <head>
-        <title> Challenge Flowchart Diagram </title>
+        <title> Challenge Use Case Diagram </title>
         {% load static %}
 
         <body>
-            <h3> Resuelve este diagrama de flujo para halla la palabra clave </h3>
-            
+            <h2>UML: Behavioral diagrams </h2>
+            <p> 
+                A use case diagram at its simplest is a representation of a user's 
+                interaction with the system that shows the relationship between 
+                the user and the different use cases in which the user is involved. 
+            </p>
+            <!--TODO: qexplicar aqui alomejor lo de las cajs simbolos etc .. -->
+
+            <h3> The keyword is the answer to the next question: </h3>
+
+            <h4> 
+                Which of the options that the survivor can do in a zombie apocalypse 
+                definitely SHOULD NOT take in first place ?
+            </h4>
             <img src="{% static 'media/game_2.svg' %}"> 
 
             <form action="/response-1/" method="GET">
