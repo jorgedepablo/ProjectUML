@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse 
-
+from utils import check_response
 # Create your views here.
 
 def start(request): 
@@ -22,33 +22,24 @@ def game_3(request):
 
 def response_1(request): 
 
-    key = 'Nal Hutta'
-
-    if str(request.GET['keyword']) != key: 
-        template = 'wrong.html'
-    else:
-        template = 'success.html'
+    key = 'nal hutta'
+    keyword = request.GET['keyword']
+    template = check_response(key, keyword)
 
     return render(request, template)
 
 def response_2(request): 
 
-    key = 'Fight zombies'
-
-    if str(request.GET['surname']) != key: 
-        template = 'wrong.html'
-    else:
-        template = 'success.html'
+    key = 'fight zombies'
+    keyword = request.GET['keyword']
+    template = check_response(key, keyword)
 
     return render(request, template)
 
 def response_3(request): 
 
-    key = 'De Pablo'
+    key = 'no humans'
+    keyword = request.GET['keyword']
+    template = check_response(key, keyword)
 
-    if str(request.GET['surname']) != key: 
-        msg = 'The surname %s is not good enough' %request.GET['surname']
-    else:
-        msg = 'The best surname ever, Mr. %s' %request.GET['surname']
-
-    return HttpResponse(msg)
+    return render(request, template)

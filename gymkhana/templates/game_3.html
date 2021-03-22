@@ -1,16 +1,24 @@
 <html>
     <head>
-        <title> Challenge Flowchart Diagram </title>
+        <title> Challenge Class Diagram </title>
+        {% load static %}
 
         <body>
-            <h3> Resuelve este diagrama de flujo para halla la palabra clave </h3>
-            
-            <img src="media/game_1.svg"> 
-            # "GET /question-1/media/game_1.svg HTTP/1.1" 404 2896 TODO
-            
-            <form action="/response-1/" method="GET">
-                <input type="text" name="keyword" id="">
+            <h2>UML: Structural diagrams </h2>
 
+            <p> 
+                The class diagram s a type of static structure diagram that describes 
+                the structure of a system by showing the system's classes, their attributes, 
+                operations (or methods), and the relationships among objects.
+            </p>
+            <!--TODO: qexplicar aqui alomejor lo de las cajs simbolos etc .. -->
+
+            <h3> In which of the following classes on the diagram would superman belong? </h3>
+
+            <img src="{% static 'media/game_3.svg' %}"> 
+
+            <form action="/response-3/" method="GET">
+                <input type="text" name="keyword" id="">
                 <input type="submit" value="send">
             </form>
         </body>
