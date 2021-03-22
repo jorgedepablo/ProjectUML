@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse 
-from utils import check_response
+from gymkhana.utils import check_response
 # Create your views here.
 
 def start(request): 
