@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from ProjectUML.views import home
 from gymkhana.views import *
 
@@ -29,4 +32,4 @@ urlpatterns = [
     path('response-2/', response_2),
     path('game-3/', game_3),
     path('response-3/', response_3)
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
