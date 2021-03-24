@@ -1,0 +1,1 @@
+web: gunicorn ProjectUML.wsgi --log-file -
