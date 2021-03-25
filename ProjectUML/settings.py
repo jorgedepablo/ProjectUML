@@ -58,7 +58,9 @@ ROOT_URLCONF = 'ProjectUML.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/pi/projects/uml/ProjectUML/gymkhana/templates/'],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'gymkhana/templates/'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
