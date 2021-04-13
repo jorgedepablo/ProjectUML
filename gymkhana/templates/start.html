@@ -27,25 +27,57 @@
                         <li class="nav-item mx-0 mx-lg-1">
                             <img src="{% static 'assets/img/UML_logo.png' %}" width="70" height="70">
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <h2> Init the gymkhana app... </h2>
 
-        <form action="/game-1/" method="GET">
-            <input type="submit" value="First Game">
-        </form>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center" display=none>
+        <!-- Portfolio Section Heading-->
+        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">Init the gymkhana app...</h4>
+        </header>
 
-        <form action="/game-2/" method="GET">
-            <input type="submit" value="Second Game">
-        </form>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
 
-        <form action="/game-3/" method="GET">
-            <input type="submit" value="Third Game">
-        </form>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
 
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1"></div>
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
+                            <form action="/game-1/" method="GET">
+                                <input type="image" value="First Game" class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="">
+                            </form>
+                        </div>
+                        <p class="mb-5"> Game 1</p>
+                    </div>
+
+                    <div class="divider-custom divider-light">
+                        <form action="/game-3/" method="GET">
+                            <input type="submit" value="Third Game">
+                        </form>
+                    </div>
+
+                    <div class="divider-custom divider-light">
+                        <form action="/game-2/" method="GET">
+                            <input type="submit" value="Second Game">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer-->
         <footer class="footer text-center">
