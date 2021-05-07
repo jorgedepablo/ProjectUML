@@ -14,7 +14,7 @@ def check_response(key, keyword):
         template = 'success.html'
     return template
 
-def tans_keyword(keyword, lang): 
+def trans_keyword(keyword, lang): 
     """ Reverse translate the keywords to have them in English."""
     keyword = str(keyword).lower()
     key_translated = keyword
