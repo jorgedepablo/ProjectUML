@@ -6,7 +6,7 @@
         {% load i18n %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title> Challenge Flowchart Diagram </title>
+        <title>{% trans 'Challenge Flowchart Diagram' %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
@@ -35,27 +35,29 @@
 
         <header class="masthead bg-primary text-white text-center" display=none>
         <!-- Portfolio Section Heading-->
-        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">UML: Activity diagrams</h4>
+        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'UML: Activity diagrams' %}</h4>
         </header>
 
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio" >
             <div class="container">
                 <p> 
+                    {% trans '
                     The flowchart shows the steps as boxes of various kinds, 
                     and their order by connecting the boxes with arrows. This 
                     diagrammatic representation illustrates a solution model 
-                    to a given problem. 
+                    to a given problem.
+                    ' %}
                 </p>
                 <!--TODO: qexplicar aqui alomejor lo de las cajs simbolos etc .. -->
 
-                <h3> Resolve the next flowchart diagram to find the keyword  </h3>
+                <h3> {% trans ' Resolve the next flowchart diagram to find the keyword ' %}</h3>
                 <img src="{% static 'media/game_1.svg' %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
                 <form action="/response-1/" method="GET" style="text-align: center;">
                     <div style="padding-top: 10px; padding-bottom: 10px; padding-left: 37%;">
                         <input type="text" name="keyword" id="" class="form-control" style="width: 40%; text-align: center;">
                     </div>
-                    <input type="submit" value="send" class="btn btn-primary btn-xl">
+                    <input type="submit" value="{% trans 'send' %}" class="btn btn-primary btn-xl">
                 </form>
             </div>
         </section>

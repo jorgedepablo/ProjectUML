@@ -6,7 +6,7 @@
         {% load i18n %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title> Challenge Use Case Diagram </title>
+        <title> {% trans 'Challenge Use Case Diagram' %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
@@ -35,31 +35,33 @@
 
         <header class="masthead bg-primary text-white text-center" display=none>
         <!-- Portfolio Section Heading-->
-        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">UML: Behavioral diagrams</h4>
+        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'UML: Behavioral diagrams' %}</h4>
         </header>
 
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio" >
             <div class="container">
                 <p> 
+                    {% trans '
                     A use case diagram at its simplest is a representation of a user's 
                     interaction with the system that shows the relationship between 
-                    the user and the different use cases in which the user is involved.  
+                    the user and the different use cases in which the user is involved.
+                    ' %} 
                 </p>
                 <!--TODO: qexplicar aqui alomejor lo de las cajs simbolos etc .. -->
 
-                <h3> The keyword is the answer to the next question: </h3>
+                <h3> {% trans 'The keyword is the answer to the next question:' %} </h3>
 
                 <h4> 
-                    Which of the options that the survivor can do in a zombie apocalypse 
-                    definitely SHOULD NOT take in first place ?
+                    {% trans 'Which of the options that the survivor can do in a zombie apocalypse 
+                    definitely SHOULD NOT take in first place ?' %}
                 </h4>
                 <img src="{% static 'media/game_2.svg' %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
                 <form action="/response-2/" method="GET" style="text-align: center;">
                     <div style="padding-top: 10px; padding-bottom: 10px; padding-left: 37%;">
                         <input type="text" name="keyword" id="" class="form-control" style="width: 40%; text-align: center;">
                     </div>
-                    <input type="submit" value="send" class="btn btn-primary btn-xl">
+                    <input type="submit" value="{% trans 'send' %}" class="btn btn-primary btn-xl">
                 </form>
             </div>
         </section>
