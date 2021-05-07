@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 19:28+0000\n"
+"POT-Creation-Date: 2021-05-07 22:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,15 @@ msgstr "Español"
 msgid "English"
 msgstr "Inglés"
 
-#: gymkhana/templates/game_1.html:9
+#: gymkhana/templates/game_1.html:10
 msgid "Challenge Flowchart Diagram"
 msgstr "Reto Diagrama de Flujo"
 
-#: gymkhana/templates/game_1.html:38
+#: gymkhana/templates/game_1.html:39
 msgid "UML: Activity diagrams"
 msgstr "UML: Diagramas de Actividad"
 
-#: gymkhana/templates/game_1.html:44
+#: gymkhana/templates/game_1.html:45
 msgid ""
 "The flowchart shows the steps as boxes of various kinds, and their order by "
 "connecting the boxes with arrows. This diagrammatic representation "
@@ -44,25 +44,25 @@ msgstr ""
 "conectadas por flechas. Este esquema representativo ilustra un modelo de "
 "solución a un problema dado. "
 
-#: gymkhana/templates/game_1.html:47
+#: gymkhana/templates/game_1.html:48
 msgid " Resolve the next flowchart diagram to find the keyword "
 msgstr ""
 "Resuelve el siguiente diaagrama de flujo para encontrar la palabra clave "
 
-#: gymkhana/templates/game_1.html:53 gymkhana/templates/game_2.html:57
-#: gymkhana/templates/game_3.html:54
+#: gymkhana/templates/game_1.html:54 gymkhana/templates/game_2.html:58
+#: gymkhana/templates/game_3.html:55
 msgid "send"
 msgstr "enviar"
 
-#: gymkhana/templates/game_2.html:9
+#: gymkhana/templates/game_2.html:10
 msgid "Challenge Use Case Diagram"
 msgstr "Reto Diagrama Caso de Uso"
 
-#: gymkhana/templates/game_2.html:38
+#: gymkhana/templates/game_2.html:39
 msgid "UML: Behavioral diagrams"
 msgstr "UML: Diagramas de Comportamiento"
 
-#: gymkhana/templates/game_2.html:44
+#: gymkhana/templates/game_2.html:45
 msgid ""
 "A use case diagram at its simplest is a representation of a user`s possible "
 "interaction with the system that shows the relationship between the user and "
@@ -73,11 +73,11 @@ msgstr ""
 "el usuario y las diferentes causísticas en las que el usuario está "
 "involucrado."
 
-#: gymkhana/templates/game_2.html:47
+#: gymkhana/templates/game_2.html:48
 msgid "The keyword is the answer to the next question:"
 msgstr "La palabra clave es la respuesta a la siguiente pregunta: "
 
-#: gymkhana/templates/game_2.html:50
+#: gymkhana/templates/game_2.html:51
 msgid ""
 "Which of the options that the survivor can do in a zombie apocalypse "
 "definitely SHOULD NOT take in first place ?"
@@ -85,15 +85,15 @@ msgstr ""
 "¿Cúal de las siguientes opciones que un superviviente puede tomar claramente "
 "NO DEBERÍA tomar en primer lugar?"
 
-#: gymkhana/templates/game_3.html:9
+#: gymkhana/templates/game_3.html:10
 msgid "Challenge Class Diagram"
 msgstr "Reto Diagrama de Clases"
 
-#: gymkhana/templates/game_3.html:38
+#: gymkhana/templates/game_3.html:39
 msgid "UML: Structural diagrams"
 msgstr "UML: Diagranmas Estructurales"
 
-#: gymkhana/templates/game_3.html:44
+#: gymkhana/templates/game_3.html:45
 msgid ""
 "The class diagram is a type of static structure diagram that describes the "
 "structure of a system by showing the system´s classes, their attributes, "
@@ -103,7 +103,7 @@ msgstr ""
 "describe la estructura de un sistema mostranto sus clases, atributos, "
 "métodos y relacciones entre los objetos."
 
-#: gymkhana/templates/game_3.html:47
+#: gymkhana/templates/game_3.html:48
 msgid "In which of the following classes on the diagram would superman belong?"
 msgstr "¿A cuál de las siguientes clases pertenece Superman?"
 
@@ -158,3 +158,15 @@ msgstr "RESPUESTA INCORRECTA"
 #: gymkhana/templates/wrong.html:45
 msgid "Sorry, but you can alwais try again. :)"
 msgstr "Lo siento, pero siempre puedes volver a intentarlo :)"
+
+#: gymkhana/views.py:26
+msgid "nal hutta"
+msgstr "nal hutta"
+
+#: gymkhana/views.py:35
+msgid "fight zombies"
+msgstr "luchar contra zombies"
+
+#: gymkhana/views.py:44
+msgid "no humans"
+msgstr "no humanos"
