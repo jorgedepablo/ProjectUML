@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
         {% load static %}
+        {% load i18n %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title> Start </title>
@@ -37,7 +38,7 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center" display=none>
         <!-- Portfolio Section Heading-->
-        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">Init the gymkhana app...</h4>
+        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'Init the gymkhana app...' %}</h4>
         </header>
 
         <!-- Portfolio Section-->
@@ -57,7 +58,7 @@
                         <form action="/game-1/" method="GET">
                             <input type="image" value="First Game" class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="" width="300" height="300">
                         </form>
-                        <h4 class="mb-5" text-align="center"> Game 1</h4>
+                        <h4 class="mb-5" text-align="center">{% trans 'Game 1' %}</h4>
                     </div>
                 </div>
 
@@ -75,7 +76,7 @@
                         <form action="/game-2/" method="GET">
                             <input type="image" value="Second Game" class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="" width="300" height="300">
                         </form>
-                        <h4 class="mb-5" text-align="center"> Game 2</h4>
+                        <h4 class="mb-5" text-align="center">{% trans 'Game 2' %}</h4>
                     </div>
                 </div>
 
@@ -93,7 +94,7 @@
                         <form action="/game-3/" method="GET">
                             <input type="image" value="Third Game" class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="" width="300" height="300">
                         </form>
-                        <h4 class="mb-5" text-align="center"> Game 3</h4>
+                        <h4 class="mb-5" text-align="center">{% trans 'Game 3' %}</h4>
                     </div>
                 </div>
             </div>

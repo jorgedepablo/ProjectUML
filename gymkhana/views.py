@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponse 
-from gymkhana.utils import check_response
+from gymkhana.utils import check_response, trans_keyword
 # Create your views here.
+
+_ = lambda s: s
 
 def start(request): 
 
     return render(request, 'start.html')
-
 
 def game_1(request): 
     # diagrama de actividades
@@ -22,24 +23,30 @@ def game_3(request):
 
 def response_1(request): 
 
-    key = 'nal hutta'
+    key = _('nal hutta')
+    lang = request.LANGUAGE_CODE
     keyword = request.GET['keyword']
+    keyword = trans_keyword(keyword, lang)
     template = check_response(key, keyword)
 
     return render(request, template)
 
 def response_2(request): 
 
-    key = 'fight zombies'
+    key = _('fight zombies')
+    lang = request.LANGUAGE_CODE
     keyword = request.GET['keyword']
+    keyword = trans_keyword(keyword, lang)
     template = check_response(key, keyword)
 
     return render(request, template)
 
 def response_3(request): 
 
-    key = 'no humans'
+    key = _('no humans')
+    lang = request.LANGUAGE_CODE
     keyword = request.GET['keyword']
+    keyword = trans_keyword(keyword, lang)
     template = check_response(key, keyword)
 
     return render(request, template)

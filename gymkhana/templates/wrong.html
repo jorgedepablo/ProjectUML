@@ -3,9 +3,10 @@
 <html lang="en">
     <head>
         {% load static %}
+        {% load i18n %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title> NOT CORRECT </title>
+        <title>{% trans 'NOT CORRECT' %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
@@ -36,14 +37,14 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center" display=none>
         <!-- Portfolio Section Heading-->
-        <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">WRONG ANSWER</h1>
+        <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'WRONG ANSWER' %}</h1>
         </header>
 
         <section class="page-section portfolio" id="portfolio" >
             <div class="container" style="text-align: center;">
-                <h2> Sorry, but you can alwais try again. :) </h2> 
+                <h2> {% trans 'Sorry, but you can alwais try again. :)' %} </h2> 
                 <form action="/start/" method="GET">
-                    <input type="submit" value="Return to gymkhana" class="btn btn-primary btn-xl">
+                    <input type="submit" value="{% trans 'Return to gymkhana' %}" class="btn btn-primary btn-xl">
                 </form>
             </div>
         </section>

@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
         {% load static %}
+        {% load i18n %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title> UML PORJECT </title>
@@ -41,12 +42,12 @@
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <form action="/start/" method="GET">
-                        <input type="submit" value="START!" class="btn btn-xl btn-outline-light">
+                        <input type="submit" value="{% trans 'START!' %}" class="btn btn-xl btn-outline-light">
                     </form>
                     <div class="divider-custom-line"></div>
                 </div>
 
-                <p class="masthead-subheading font-weight-light mb-0">Have fun, train and learn about Unified Modeling Language</p>
+                <p class="masthead-subheading font-weight-light mb-0">{% trans 'Have fun, train and learn about Unified Modeling Language' %}</p>
             </div>
         </header>
 
