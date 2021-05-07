@@ -45,6 +45,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # internationalitation 
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -106,6 +107,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+_ = lambda s: s
+
+LANGUAGES = (
+    ('es', _('Spanish')),
+    ('en', _('English')),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -123,3 +131,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'gymkhana/static')
 ]
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, "locale"),
+)
