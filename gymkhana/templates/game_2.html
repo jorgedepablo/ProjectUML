@@ -4,6 +4,7 @@
     <head>
         {% load static %}
         {% load i18n %}
+        {% get_current_language as LANGUAGE_CODE %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title> {% trans 'Challenge Use Case Diagram' %}</title>
@@ -49,7 +50,7 @@
                 <h4> 
                     {% trans 'Which of the options that the survivor can do in a zombie apocalypse definitely SHOULD NOT take in first place ?' %}
                 </h4>
-                <img src="{% static '{% trans 'media/en/game_2.svg' %}' %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
+                <img src="{% static 'media/'|add:LANGUAGE_CODE|add:'/game_2.svg' %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
                 <form action="/response-2/" method="GET" style="text-align: center;">
                     <div style="padding-top: 10px; padding-bottom: 10px; padding-left: 37%;">
                         <input type="text" name="keyword" id="" class="form-control" style="width: 40%; text-align: center;">
