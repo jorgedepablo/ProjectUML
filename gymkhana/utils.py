@@ -19,7 +19,7 @@ def trans_keyword(keyword, lang):
     keyword = str(keyword).lower()
     key_translated = keyword
 
-    if (lang != en ): 
+    if (lang != 'en' ): 
         locale_file = os.path.join(BASE_DIR, "locale", lang, "LC_MESSAGES", "django.po")
         po = polib.pofile(locale_file)
         i = 0 
