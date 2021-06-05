@@ -20,12 +20,12 @@ def game(request):
         raise Http404("No existe")
 
     #esto lo podriamos manejar para que sea resistente a errores
-    challenge_type = Diagrams.objects.get(name=challenge.diagram_type)
+    #challenge_type = Diagrams.objects.get(name=challenge.diagram_type)
     challege_title = challenge.title
     challenge_quiestion = challenge.question 
     challenge_diagram = challenge.diagram
-    challenge_type_name= challenge_type.name 
-    challenge_type_description = challenge_type.description
+    #challenge_type_name= challenge_type.name 
+    #challenge_type_description = challenge_type.description
 
     doc = open("game.html")
     plt = Template(doc.read())
@@ -33,9 +33,9 @@ def game(request):
     ctx=Context({"challenge_id":challenge_id,
                  "challenge_title":challege_title, 
                  "challenge_quiestion":challenge_quiestion, 
-                 "challenge_diagram":challenge_diagram,
-                 "challenge_type_name":challenge_type_name,
-                 "challenge_type_description":challenge_type_description})
+                 "challenge_diagram":challenge_diagram})
+                 #"challenge_type_name":challenge_type_name,
+                 #"challenge_type_description":challenge_type_description})
 
     template = plt.render(ctx)
 
