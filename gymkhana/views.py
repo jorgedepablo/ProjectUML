@@ -12,7 +12,7 @@ def start(request):
     return render(request, 'start.html')
 
 
-def game(request, challenge_id): 
+def game(request): 
     challenge_id = request.GET['game']
     try: 
         challenge = Challenges.objects.get(id=challenge_id)
@@ -26,7 +26,7 @@ def game(request, challenge_id):
     challenge_diagram = challenge.diagram
     challenge_type_name= challenge_type.name 
     challenge_type_description = challenge_type.description
-    
+
     doc = open("game.html")
     plt = Template(doc.read())
     doc.close()
