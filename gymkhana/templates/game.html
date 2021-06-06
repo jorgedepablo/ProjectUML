@@ -7,7 +7,7 @@
         {% get_current_language as LANGUAGE_CODE %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>{% trans 'Challenge {{challenge_title}}' %}</title>
+        <title>{% trans 'Challenge '|add:challenge_title %} </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
@@ -47,12 +47,12 @@
                 <!-- <p>{% trans '{{diagram_type_description}}' %}</p> -->
                 <!--TODO: qexplicar aqui alomejor lo de las cajs simbolos etc .. -->
 
-                <h3> {% trans ' {{challenge_question}} ' %}</h3>
-                <img src="{% static 'media/'|add:LANGUAGE_CODE|add:'/{{challenge_diagram}}' %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
+                <h3>{% trans challenge_question %}</h3>
+                <img src="{% static 'media/'|add:LANGUAGE_CODE|add:'/'|add:challenge_diagram %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
                 <form action="/response/" method="GET" style="text-align: center;">
                     <div style="padding-top: 10px; padding-bottom: 10px; padding-left: 37%;">
                         <input type="text" name="keyword" id="" class="form-control" style="width: 40%; text-align: center;">
-                        <input id="prodId" name="challenge" type="hidden" value="{{challenge_id}}">
+                        <input id="prodId" name="challenge" type="hidden" value={{challenge_id}}>
                     </div>
                     <input type="submit" value="{% trans 'send' %}" class="btn btn-primary btn-xl">
                 </form>
