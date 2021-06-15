@@ -20,11 +20,11 @@ class Challenges(models.Model):
     awnser = models.CharField(max_length=100)
     diagram = models.CharField(max_length=20) 
     creator = models.ForeignKey(Users, on_delete=models.CASCADE)
-    diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE)
+    diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
 
 class Games(models.Model): 
     title = models.CharField(max_length=50)
     challenges = models.ManyToManyField(Challenges)
-    creator = models.ForeignKey(Users, on_delete=models.CASCADE)
+    creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
 
 
