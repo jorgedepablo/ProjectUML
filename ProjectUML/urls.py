@@ -23,9 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('start/', start),
-    path('game/', game),
+    path('challenge/', challenge),
     path('response/', response)
 ]
-
-# GET 
-# POST 

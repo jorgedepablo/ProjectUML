@@ -10,39 +10,41 @@ from ProjectUML.settings import TEMPLATES
 _ = lambda s: s
 
 def start(request): 
+    games = Games.objects 
+
+    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + "start.html")
+    plt = Template(doc.read())
+    doc.close()
+
     return render(request, 'start.html')
 
-
-def game(request): 
+def challenge(request): 
     challenge_id = request.GET['game']
     try: 
         challenge = Challenges.objects.get(id=challenge_id)
-    except Challenges.DoesNotExist: 
+    except Challenges.DoesNotExist: 0
         raise Http404("No existe")
 
     #esto lo podriamos manejar para que sea resistente a errores
-    #challenge_type = Diagrams.objects.get(name=challenge.diagram_type)
+    challenge_type = Diagrams.objects.get(name=challenge.diagram_type)
     challege_title = _(challenge.title)
     challenge_question = _(challenge.question)
     challenge_diagram = challenge.diagram
-    #challenge_type_name= challenge_type.name 
-    #challenge_type_description = challenge_type.description
+    challenge_type_name= _(challenge_type.name) 
+    challenge_type_description = _(challenge_type.description)
 
-
-    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + "game.html")
+    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + "chanllenge.html")
     plt = Template(doc.read())
     doc.close()
     ctx=Context({"challenge_id":challenge_id,
-                 "challenge_title":challege_title, 
-                 "challenge_question":challenge_question, 
-                 "challenge_diagram":challenge_diagram})
-                 #"challenge_type_name":challenge_type_name,
-                 #"challenge_type_description":challenge_type_description})
+                "challenge_title":challege_title, 
+                "challenge_question":challenge_question, 
+                "challenge_diagram":challenge_diagram,
+                "challenge_type_name":challenge_type_name,
+                "challenge_type_description":challenge_type_description})
 
-    template = plt.render(ctx)
-
-    return HttpResponse(template)
-    #return render(request, template)
+    templ = plt.render(ctx)
+    return HttpResponse(templ)
 
 
 def response(request): 
@@ -57,3 +59,4 @@ def response(request):
     template = check_response(key, keyword)
 
     return render(request, template)
+
