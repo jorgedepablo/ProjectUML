@@ -22,7 +22,7 @@ def challenge(request):
     challenge_id = request.GET['game']
     try: 
         challenge = Challenges.objects.get(id=challenge_id)
-    except Challenges.DoesNotExist: 0
+    except Challenges.DoesNotExist:
         raise Http404("No existe")
 
     #esto lo podriamos manejar para que sea resistente a errores
