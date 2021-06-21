@@ -19,7 +19,7 @@ class Challenges(models.Model):
     question = models.CharField(max_length=10000)
     awnser = models.CharField(max_length=100)
     diagram = models.CharField(max_length=20) 
-    creator = models.ForeignKey(Users, on_delete=models.CASCADE)
+    creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
     diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
 
 class Games(models.Model): 
