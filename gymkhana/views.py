@@ -23,7 +23,7 @@ def start(request):
 
 
 def challenge(request):
-    game_id = request.GET['game']
+    game_id = request.GET['game_id']
     last_challenge = int(request.GET['last_challenge'])
     challenge_id = challenge_manager(game_id, last_challenge)
     # challenge_id = request.GET['game']
@@ -34,15 +34,15 @@ def challenge(request):
         raise Http404("No existe")
 
     #esto lo podriamos manejar para que sea resistente a errores
-    challenge_type = Diagrams.objects.get(name=challenge.diagram_type)
-    challege_title = _(challenge.title)
+    challenge_type = Diagrams.objects.get(id=challenge.diagram_type_id)
+    challege_title = _(challenge.name)
     challenge_question = _(challenge.question)
     challenge_diagram = challenge.diagram
-    challenge_type_name= _(challenge_type.name) 
+    challenge_type_name= _(challenge_type.type) 
     challenge_type_description = _(challenge_type.description)
 
 
-    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + "chanllenge.html")
+    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + "challenge.html")
     plt = Template(doc.read())
     doc.close()
     ctx=Context({"challenge_id":challenge_id,

@@ -22,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">UML PROJECT</a>
+                <a class="navbar-brand js-scroll-trigger" href="/">UML PROJECT</a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1">
@@ -39,10 +39,11 @@
         <!-- Portfolio Section Heading-->
         <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'CONGRATS, CORRECT ANSWER !!' %}</h1>
         </header>
-        {% if is_last_challenge == 'True' %}
+        <p>{{is_last_challenge}}</p>
+        {% if is_last_challenge %}
             <section class="page-section portfolio" id="portfolio" >
                 <div class="container" style="text-align: center;">
-                    <h2> {% trans 'You've finished this gymkhana. Let`s go for more games :)' %} </h2> 
+                    <h2> {% trans 'You`ve finished this gymkhana. Let`s go for more games :)' %} </h2> 
                     <form action="/start/" method="GET">
                         <input type="submit" value="{% trans 'Return to gymkhana app' %}" class="btn btn-primary btn-xl">
                     </form>
@@ -51,10 +52,10 @@
         {% else %}
             <section class="page-section portfolio" id="portfolio" >
                 <div class="container" style="text-align: center;">
-                    <h2> {% trans 'Let's go for the next challenge. :)' %} </h2> 
+                    <h2> {% trans 'Let`s go for the next challenge. :)' %} </h2> 
                     <form action="/challenge/" method="GET">
                         <input type="submit" value="{% trans 'Next Challenge' %}" class="btn btn-primary btn-xl">
-                        <input name="game_id" type="hidden" value={{game.id}}>
+                        <input name="game_id" type="hidden" value={{game_id}}>
                         <input name="last_challenge" type="hidden" value={{challenge_id}}>
                     </form>
                 </div>

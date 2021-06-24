@@ -23,7 +23,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">UML PROJECT</a>
+                <a class="navbar-brand js-scroll-trigger" href="/">UML PROJECT</a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1">
@@ -36,19 +36,17 @@
 
         <header class="masthead bg-primary text-white text-center" display=none>
         <!-- Portfolio Section Heading-->
-        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'UML: Diagram Type' %}</h4>
-        <!-- <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'UML: {{diagram_type_name}}' %}</h4> -->
+        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'UML: '|add:challenge_type_name %}</h4>
         </header>
 
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio" >
             <div class="container">
-                <p>aqui va la descripcion de los diagramas</p>
-                <!-- <p>{% trans '{{diagram_type_description}}' %}</p> -->
+                <p>{% trans challenge_type_description %}</p>.
                 <!--TODO: qexplicar aqui alomejor lo de las cajs simbolos etc .. -->
 
                 <h3>{% trans challenge_question %}</h3>
-                <img src="{% static 'media/'|add:LANGUAGE_CODE|add:'/'|add:challenge_diagram %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
+                <img src="{% static 'media/'|add:LANGUAGE_CODE|add:'/'|add:challenge_diagram' %}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
                 <form action="/response/" method="GET" style="text-align: center;">
                     <div style="padding-top: 10px; padding-bottom: 10px; padding-left: 37%;">
                         <input type="text" name="keyword" id="" class="form-control" style="width: 40%; text-align: center;">
