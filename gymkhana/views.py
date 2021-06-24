@@ -1,8 +1,8 @@
 from os import terminal_size
 from django import template
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import HttpResponse
 from django.http import Http404
-from django.template import Template, Context
+from django.template import Template, Context, loader
 from gymkhana.utils import *
 from .models import *
 from ProjectUML.settings import TEMPLATES
@@ -12,13 +12,9 @@ _ = lambda s: s
 
 def start(request): 
     games = Games.objects.all() # lista con todos los games 
+    plt = loader.get_template('start.html')
+    templ = plt.render({"games_list":games})
 
-    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + "start.html")
-    plt = Template(doc.read())
-    doc.close()
-
-    ctx=Context({"games_list":games})
-    templ = plt.render(ctx)
     return HttpResponse(templ)
 
 
@@ -26,7 +22,6 @@ def challenge(request):
     game_id = request.GET['game_id']
     last_challenge = int(request.GET['last_challenge'])
     challenge_id = challenge_manager(game_id, last_challenge)
-    # challenge_id = request.GET['game']
 
     try: 
         challenge = Challenges.objects.get(id=challenge_id)
@@ -41,11 +36,8 @@ def challenge(request):
     challenge_type_name= _(challenge_type.type) 
     challenge_type_description = _(challenge_type.description)
 
-
-    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + "challenge.html")
-    plt = Template(doc.read())
-    doc.close()
-    ctx=Context({"challenge_id":challenge_id,
+    plt = loader.get_template('challenge.html')
+    templ = plt.render({"challenge_id":challenge_id,
                 "challenge_title":challege_title, 
                 "challenge_question":challenge_question, 
                 "challenge_diagram":challenge_diagram,
@@ -54,7 +46,6 @@ def challenge(request):
                 "last_challenge_id":last_challenge,
                 "game_id":game_id})
 
-    templ = plt.render(ctx)
     return HttpResponse(templ)
 
 
@@ -69,7 +60,6 @@ def response(request):
     challenges_list = list(Games.objects.get(id=game_id).challenges.all())
     is_last_challenge = True 
     if len(challenges_list) > 1: 
-        # es importante que no hay una lista de challenges con el challenge repretido 
         index = challenges_list.index(challenge)
         if index < (len(challenges_list) - 1): 
             is_last_challenge = False
@@ -78,15 +68,12 @@ def response(request):
     keyword = trans_keyword(keyword, lang)
     template = check_response(key, keyword)
 
-    doc = open(str(TEMPLATES[0]['DIRS'])[2:-2] + template)
-    plt = Template(doc.read())
-    doc.close()
-
-    ctx=Context({"challenge_id":challenge_id,
+    plt = loader.get_template(template)
+    templ = plt.render({"challenge_id":challenge_id,
                 "is_last_challenge":is_last_challenge,
                 "last_challenge":last_challenge_id,
                 "game_id":game_id})
-    templ = plt.render(ctx)
+
     return HttpResponse(templ)
 
 
