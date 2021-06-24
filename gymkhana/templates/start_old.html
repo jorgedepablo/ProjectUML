@@ -6,7 +6,7 @@
         {% load i18n %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>{% trans 'NOT CORRECT' %}</title>
+        <title> Start </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
@@ -34,22 +34,74 @@
             </div>
         </nav>
 
+
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center" display=none>
         <!-- Portfolio Section Heading-->
-        <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'WRONG ANSWER' %}</h1>
+        <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'Init the gymkhana app...' %}</h4>
         </header>
 
-        <section class="page-section portfolio" id="portfolio" >
-            <div class="container" style="text-align: center;">
-                <h2> {% trans 'Sorry, but you can alwais try again. :)' %} </h2> 
-                <form action="/challenge/" method="GET">
-                    <input type="submit" value="{% trans 'Return to gymkhana' %}" class="btn btn-primary btn-xl">
-                    <input name="game_id" type="hidden" value={{game.id}}>
-                    <input name="last_challenge" type="hidden" value={{last_challenge}}>
-                </form>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- Game 1 -->
+                <div class="col-md-6 col-lg-4 mb-5" style="text-align: center; align-items: center; margin: 0 auto;">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1"></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
+                        <form action="/game/" method="GET">
+                            <input type="image" class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="" width="300" height="300">
+                            <input name="game" type="hidden" value="1">
+                        </form>
+                        <h4 class="mb-5" text-align="center">{% trans 'Game 1' %}</h4>
+                    </div>
+                </div>
+
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- Game 2 -->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" style="text-align: center; align-items: center; margin: 0 auto;">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1"></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
+                        <form action="/game/" method="GET">
+                            <input type="image" class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="" width="300" height="300">
+                            <input name="game" type="hidden" value="2">
+                        </form>
+                        <h4 class="mb-5" text-align="center">{% trans 'Game 2' %}</h4>
+                    </div>
+                </div>
+
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- Game 3 -->
+                <div class="col-md-6 col-lg-4 mb-5" style="text-align: center; align-items: center; margin: 0 auto;">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1"></div>
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-play fa-3x"></i></div>
+                        <form action="/game/" method="GET">
+                            <input type="image" class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="" width="300" height="300">
+                            <input name="game" type="hidden" value="3">
+                        </form>
+                        <h4 class="mb-5" text-align="center">{% trans 'Game 3' %}</h4>
+                    </div>
+                </div>
             </div>
-        </section>
+    </section>
 
         <!-- Footer-->
         <footer class="footer text-center">
@@ -95,6 +147,3 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="% static 'js/scripts.js' %}"></script>
-    </body>
-
-</html>

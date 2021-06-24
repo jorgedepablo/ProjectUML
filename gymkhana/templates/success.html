@@ -39,16 +39,27 @@
         <!-- Portfolio Section Heading-->
         <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'CONGRATS, CORRECT ANSWER !!' %}</h1>
         </header>
-
-        <section class="page-section portfolio" id="portfolio" >
-            <div class="container" style="text-align: center;">
-                <h2> {% trans ' Let`s go for more games :)' %} </h2> 
-                <form action="/start/" method="GET">
-                    <input type="submit" value="{% trans 'Return to gymkhana' %}" class="btn btn-primary btn-xl">
-                </form>
-            </div>
-        </section>
-
+        {% if is_last_challenge == 'True' %}
+            <section class="page-section portfolio" id="portfolio" >
+                <div class="container" style="text-align: center;">
+                    <h2> {% trans 'You've finished this gymkhana. Let`s go for more games :)' %} </h2> 
+                    <form action="/start/" method="GET">
+                        <input type="submit" value="{% trans 'Return to gymkhana app' %}" class="btn btn-primary btn-xl">
+                    </form>
+                </div>
+            </section>
+        {% else %}
+            <section class="page-section portfolio" id="portfolio" >
+                <div class="container" style="text-align: center;">
+                    <h2> {% trans 'Let's go for the next challenge. :)' %} </h2> 
+                    <form action="/challenge/" method="GET">
+                        <input type="submit" value="{% trans 'Next Challenge' %}" class="btn btn-primary btn-xl">
+                        <input name="game_id" type="hidden" value={{game.id}}>
+                        <input name="last_challenge" type="hidden" value={{challenge_id}}>
+                    </form>
+                </div>
+            </section>
+        {% endif %}
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">

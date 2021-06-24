@@ -52,7 +52,9 @@
                 <form action="/response/" method="GET" style="text-align: center;">
                     <div style="padding-top: 10px; padding-bottom: 10px; padding-left: 37%;">
                         <input type="text" name="keyword" id="" class="form-control" style="width: 40%; text-align: center;">
-                        <input id="prodId" name="challenge" type="hidden" value={{challenge_id}}>
+                        <input id="challenge_id" name="challenge" type="hidden" value={{challenge_id}}>
+                        <input id="game_id" name="game_id" type="hidden" value={{game_id}}>
+                        <input id="last_challenge" name="last_challenge_id" type="hidden" value={{last_challenge_id}}>
                     </div>
                     <input type="submit" value="{% trans 'send' %}" class="btn btn-primary btn-xl">
                 </form>
@@ -72,8 +74,7 @@
                             Fuenlabrada, Madrid 28943
                         </p>
                     </div>
-                    <!-- Footer Social Ico[06/Jun/2021 20:19:31] "GET /%%20static%20'js/scripts.js'%20%%7D HTTP/1.1" 404 2486
-ns-->
+                    <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
                         <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/ETSIT_URJC"><i class="fab fa-fw fa-twitter"></i></a>
