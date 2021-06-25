@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 16:24+0000\n"
+"POT-Creation-Date: 2021-06-25 17:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ProjectUML/settings.py:113
+#: ProjectUML/settings.py:114
 msgid "Spanish"
 msgstr ""
 
-#: ProjectUML/settings.py:114
+#: ProjectUML/settings.py:115
 msgid "English"
+msgstr ""
+
+#: gymkhana/templates/challenge.html:10
+msgid "Challenge "
+msgstr ""
+
+#: gymkhana/templates/challenge.html:39
+msgid "UML: "
+msgstr ""
+
+#: gymkhana/templates/challenge.html:56
+msgid "send"
+msgstr ""
+
+#: gymkhana/templates/home.html:45
+msgid "START!"
+msgstr ""
+
+#: gymkhana/templates/home.html:50
+msgid "Have fun, train and learn about Unified Modeling Language"
+msgstr ""
+
+#: gymkhana/templates/start.html:38
+msgid "Init the gymkhana app..."
+msgstr ""
+
+#: gymkhana/templates/start.html:67
+msgid "NO GAMES TO PLAY :("
+msgstr ""
+
+#: gymkhana/templates/success.html:9
+msgid "CORRECT"
+msgstr ""
+
+#: gymkhana/templates/success.html:40
+msgid "CONGRATS, CORRECT ANSWER !!"
+msgstr ""
+
+#: gymkhana/templates/success.html:46
+msgid "You`ve finished this gymkhana. Let`s go for more games :)"
+msgstr ""
+
+#: gymkhana/templates/success.html:48
+msgid "Return to gymkhana app"
+msgstr ""
+
+#: gymkhana/templates/success.html:55
+msgid "Let`s go for the next challenge. :)"
+msgstr ""
+
+#: gymkhana/templates/success.html:57
+msgid "Next Challenge"
+msgstr ""
+
+#: gymkhana/templates/wrong.html:9
+msgid "NOT CORRECT"
+msgstr ""
+
+#: gymkhana/templates/wrong.html:40
+msgid "WRONG ANSWER"
+msgstr ""
+
+#: gymkhana/templates/wrong.html:45
+msgid "Sorry, but you can alwais try again. :)"
+msgstr ""
+
+#: gymkhana/templates/wrong.html:47
+msgid "Return to the challenge"
 msgstr ""
