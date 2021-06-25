@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 22:14+0000\n"
+"POT-Creation-Date: 2021-06-25 17:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,94 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ProjectUML/settings.py:113
+#: ProjectUML/settings.py:114
 msgid "Spanish"
 msgstr "Español"
 
-#: ProjectUML/settings.py:114
+#: ProjectUML/settings.py:115
 msgid "English"
 msgstr "Inglés"
 
-#: gymkhana/templates/game_1.html:10
-msgid "Challenge Flowchart Diagram"
-msgstr "Reto Diagrama de Flujo"
+#: gymkhana/templates/challenge.html:10
+msgid "Challenge "
+msgstr "Reto "
 
-#: gymkhana/templates/game_1.html:39
-msgid "UML: Activity diagrams"
-msgstr "UML: Diagramas de Actividad"
+#: gymkhana/templates/challenge.html:39
+msgid "UML: "
+msgstr "UML: "
 
-#: gymkhana/templates/game_1.html:45
-msgid ""
-"The flowchart shows the steps as boxes of various kinds, and their order by "
-"connecting the boxes with arrows. This diagrammatic representation "
-"illustrates a solution model to a given problem."
-msgstr ""
-"El diagramde de flujo muestra procesos como cajas de varios tipos que están "
-"conectadas por flechas. Este esquema representativo ilustra un modelo de "
-"solución a un problema dado. "
-
-#: gymkhana/templates/game_1.html:48
-msgid " Resolve the next flowchart diagram to find the keyword "
-msgstr ""
-"Resuelve el siguiente diaagrama de flujo para encontrar la palabra clave "
-
-#: gymkhana/templates/game_1.html:54 gymkhana/templates/game_2.html:58
-#: gymkhana/templates/game_3.html:55
+#: gymkhana/templates/challenge.html:56
 msgid "send"
 msgstr "enviar"
-
-#: gymkhana/templates/game_2.html:10
-msgid "Challenge Use Case Diagram"
-msgstr "Reto Diagrama Caso de Uso"
-
-#: gymkhana/templates/game_2.html:39
-msgid "UML: Behavioral diagrams"
-msgstr "UML: Diagramas de Comportamiento"
-
-#: gymkhana/templates/game_2.html:45
-msgid ""
-"A use case diagram at its simplest is a representation of a user`s possible "
-"interaction with the system that shows the relationship between the user and "
-"the different use cases in which the user is involved."
-msgstr ""
-"Un diagrama de casos de uso es una descripción gráfica de las posibles "
-"interaciones de un usuario con un sistema que muestra las relacciones entre "
-"el usuario y las diferentes causísticas en las que el usuario está "
-"involucrado."
-
-#: gymkhana/templates/game_2.html:48
-msgid "The keyword is the answer to the next question:"
-msgstr "La palabra clave es la respuesta a la siguiente pregunta: "
-
-#: gymkhana/templates/game_2.html:51
-msgid ""
-"Which of the options that the survivor can do in a zombie apocalypse "
-"definitely SHOULD NOT take in first place ?"
-msgstr ""
-"¿Cúal de las siguientes opciones que un superviviente puede tomar claramente "
-"NO DEBERÍA tomar en primer lugar?"
-
-#: gymkhana/templates/game_3.html:10
-msgid "Challenge Class Diagram"
-msgstr "Reto Diagrama de Clases"
-
-#: gymkhana/templates/game_3.html:39
-msgid "UML: Structural diagrams"
-msgstr "UML: Diagranmas Estructurales"
-
-#: gymkhana/templates/game_3.html:45
-msgid ""
-"The class diagram is a type of static structure diagram that describes the "
-"structure of a system by showing the system´s classes, their attributes, "
-"operations (or methods), and the relationships among objects."
-msgstr ""
-"Los diagramas de clase es un tripo de diagrama estructural estático que "
-"describe la estructura de un sistema mostranto sus clases, atributos, "
-"métodos y relacciones entre los objetos."
-
-#: gymkhana/templates/game_3.html:48
-msgid "In which of the following classes on the diagram would superman belong?"
-msgstr "¿A cuál de las siguientes clases pertenece Superman?"
 
 #: gymkhana/templates/home.html:45
 msgid "START!"
@@ -115,21 +46,13 @@ msgstr "¡EMPEZAR!"
 msgid "Have fun, train and learn about Unified Modeling Language"
 msgstr "Divierte, entrena y aprende sobre Lenguaje Unificado Modelado"
 
-#: gymkhana/templates/start.html:41
+#: gymkhana/templates/start.html:38
 msgid "Init the gymkhana app..."
 msgstr "Iniciando gymkhana app..."
 
-#: gymkhana/templates/start.html:61
-msgid "Game 1"
-msgstr "Reto 1"
-
-#: gymkhana/templates/start.html:79
-msgid "Game 2"
-msgstr "Reto 2"
-
-#: gymkhana/templates/start.html:97
-msgid "Game 3"
-msgstr "Reto 3"
+#: gymkhana/templates/start.html:67
+msgid "NO GAMES TO PLAY :("
+msgstr "NINGÚN JUEGO AL QUE JUGAR :("
 
 #: gymkhana/templates/success.html:9
 msgid "CORRECT"
@@ -139,13 +62,21 @@ msgstr "CORRECTO"
 msgid "CONGRATS, CORRECT ANSWER !!"
 msgstr "ENHORABUENA, TU RESPUESTA ES CORRECTA !!"
 
-#: gymkhana/templates/success.html:45
-msgid " Let`s go for more games :)"
-msgstr " Vamos a por otros retos :)"
+#: gymkhana/templates/success.html:46
+msgid "You`ve finished this gymkhana. Let`s go for more games :)"
+msgstr "Has terminado esta gymkhana. Vamos a por otros retos :)"
 
-#: gymkhana/templates/success.html:47 gymkhana/templates/wrong.html:47
-msgid "Return to gymkhana"
+#: gymkhana/templates/success.html:48
+msgid "Return to gymkhana app"
 msgstr "Volver a la gymkhana"
+
+#: gymkhana/templates/success.html:55
+msgid "Let`s go for the next challenge. :)"
+msgstr "Vamos a por el siguiente reto :)"
+
+#: gymkhana/templates/success.html:57
+msgid "Next Challenge"
+msgstr "Siguiente Reto"
 
 #: gymkhana/templates/wrong.html:9
 msgid "NOT CORRECT"
@@ -159,14 +90,85 @@ msgstr "RESPUESTA INCORRECTA"
 msgid "Sorry, but you can alwais try again. :)"
 msgstr "Lo siento, pero siempre puedes volver a intentarlo :)"
 
-#: gymkhana/views.py:26
-msgid "nal hutta"
-msgstr "nal hutta"
+#: gymkhana/templates/wrong.html:47
+msgid "Return to the challenge"
+msgstr "Volver a la gymkhana"
 
-#: gymkhana/views.py:35
-msgid "fight zombies"
-msgstr "luchar contra zombies"
+#~ msgid "Challenge Flowchart Diagram"
+#~ msgstr "Reto Diagrama de Flujo"
 
-#: gymkhana/views.py:44
-msgid "no humans"
-msgstr "no humanos"
+#~ msgid "UML: Activity diagrams"
+#~ msgstr "UML: Diagramas de Actividad"
+
+#~ msgid ""
+#~ "The flowchart shows the steps as boxes of various kinds, and their order "
+#~ "by connecting the boxes with arrows. This diagrammatic representation "
+#~ "illustrates a solution model to a given problem."
+#~ msgstr ""
+#~ "El diagramde de flujo muestra procesos como cajas de varios tipos que "
+#~ "están conectadas por flechas. Este esquema representativo ilustra un "
+#~ "modelo de solución a un problema dado. "
+
+#~ msgid " Resolve the next flowchart diagram to find the keyword "
+#~ msgstr ""
+#~ "Resuelve el siguiente diaagrama de flujo para encontrar la palabra clave "
+
+#~ msgid "Challenge Use Case Diagram"
+#~ msgstr "Reto Diagrama Caso de Uso"
+
+#~ msgid "UML: Behavioral diagrams"
+#~ msgstr "UML: Diagramas de Comportamiento"
+
+#~ msgid ""
+#~ "A use case diagram at its simplest is a representation of a user`s "
+#~ "possible interaction with the system that shows the relationship between "
+#~ "the user and the different use cases in which the user is involved."
+#~ msgstr ""
+#~ "Un diagrama de casos de uso es una descripción gráfica de las posibles "
+#~ "interaciones de un usuario con un sistema que muestra las relacciones "
+#~ "entre el usuario y las diferentes causísticas en las que el usuario está "
+#~ "involucrado."
+
+#~ msgid "The keyword is the answer to the next question:"
+#~ msgstr "La palabra clave es la respuesta a la siguiente pregunta: "
+
+#~ msgid ""
+#~ "Which of the options that the survivor can do in a zombie apocalypse "
+#~ "definitely SHOULD NOT take in first place ?"
+#~ msgstr ""
+#~ "¿Cúal de las siguientes opciones que un superviviente puede tomar "
+#~ "claramente NO DEBERÍA tomar en primer lugar?"
+
+#~ msgid "UML: Structural diagrams"
+#~ msgstr "UML: Diagranmas Estructurales"
+
+#~ msgid ""
+#~ "The class diagram is a type of static structure diagram that describes "
+#~ "the structure of a system by showing the system´s classes, their "
+#~ "attributes, operations (or methods), and the relationships among objects."
+#~ msgstr ""
+#~ "Los diagramas de clase es un tripo de diagrama estructural estático que "
+#~ "describe la estructura de un sistema mostranto sus clases, atributos, "
+#~ "métodos y relacciones entre los objetos."
+
+#~ msgid ""
+#~ "In which of the following classes on the diagram would superman belong?"
+#~ msgstr "¿A cuál de las siguientes clases pertenece Superman?"
+
+#~ msgid "Game 1"
+#~ msgstr "Juego 1"
+
+#~ msgid "Game 2"
+#~ msgstr "Juego 2"
+
+#~ msgid "Game 3"
+#~ msgstr "Juego 3"
+
+#~ msgid "nal hutta"
+#~ msgstr "nal hutta"
+
+#~ msgid "fight zombies"
+#~ msgstr "luchar contra zombies"
+
+#~ msgid "no humans"
+#~ msgstr "no humanos"

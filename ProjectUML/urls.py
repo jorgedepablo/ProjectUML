@@ -26,10 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('start/', start),
-    path('game-1/', game_1),
-    path('response-1/', response_1),
-    path('game-2/', game_2),
-    path('response-2/', response_2),
-    path('game-3/', game_3),
-    path('response-3/', response_3)
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('challenge/', challenge),
+    path('response/', response)
+]
