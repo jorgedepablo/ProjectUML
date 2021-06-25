@@ -11,7 +11,10 @@ from ProjectUML.settings import TEMPLATES
 _ = lambda s: s
 
 def start(request): 
-    games = Games.objects.all() # lista con todos los games 
+    try: 
+        games = Games.objects.all() # lista con todos los games 
+    except Games.DoesNotExist:
+        raise Http404("No existe")
     plt = loader.get_template('start.html')
     templ = plt.render({"games_list":games})
 
@@ -56,7 +59,11 @@ def response(request):
     game_id = request.GET['game_id']
     last_challenge_id = request.GET['last_challenge_id']
 
-    challenge = Challenges.objects.get(id=challenge_id)
+    try: 
+        challenge = Challenges.objects.get(id=challenge_id)
+    except Challenges.DoesNotExist:
+        raise Http404("No existe")
+
     challenges_list = list(Games.objects.get(id=game_id).challenges.all())
     is_last_challenge = True 
     if len(challenges_list) > 1: 

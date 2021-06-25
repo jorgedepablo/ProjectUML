@@ -8,6 +8,7 @@ from .models import *
 import polib #RECORDAR METER EN EL REQUIREMENTS DE HEROKU!!!!
 
 def challenge_manager(game, last_challenge): 
+    """Retrun the next challenge into a challenges list linked with specified game list. """
     challenges_list = list(Games.objects.get(id=game).challenges.all())
     if last_challenge != 0: 
         i = 0 
