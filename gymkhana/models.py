@@ -7,24 +7,33 @@ from django.db.models.signals import ModelSignal
 class Users(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField()
-    admin = models.BooleanField()
+    admin = models.BooleanField(default=False)
+    points = models.IntegerField(default=0)
+    challenges_passed = models.ForeignKey('Challenges', on_delete=models.CASCADE, null=True, blank=True)
+    created_at = models.DateTimeField(null=True, default=None)
+    updated_at = models.DateTimeField(null=True, default=None)
 
 class Diagrams(models.Model): 
     type = models.CharField(max_length=100)
     description = models.CharField(max_length=10000)
 
 class Challenges(models.Model): 
-    #diagram_type = models.ForeignKey(Diagrams)
     name = models.CharField(max_length=50)
     question = models.CharField(max_length=10000)
     awnser = models.CharField(max_length=100)
     diagram = models.CharField(max_length=20) 
+    imagen = models.ImageField(upload_to='challenges/', null=True, blank=True)
     creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
     diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
+    created_at = models.DateTimeField(null=True, default=None)
+    updated_at = models.DateTimeField(null=True, default=None)
+    points = models.IntegerField(default=0)
 
 class Games(models.Model): 
     title = models.CharField(max_length=50)
     challenges = models.ManyToManyField(Challenges)
     creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    created_at = models.DateTimeField(null=True, default=None)
+    updated_at = models.DateTimeField(null=True, default=None)
 
 

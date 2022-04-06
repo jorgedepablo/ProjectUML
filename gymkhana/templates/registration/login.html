@@ -1,10 +1,13 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
+
+{% block header %}
+<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+    {% trans 'LOGIN' %}
+</h4>
+{% endblock %}
 
 {% block content %}
-
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
@@ -15,24 +18,31 @@
     {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
+<form method="post" style="text-align: center;" action="{% url 'login' %} ">
 {% csrf_token %}
-    <div>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </div>
     </div>
-    <div>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </div>
     </div>
-
-    <div>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
+    {% if form.errors %}
+        <div class="text-center">
+            <p>Your username and password didn't match. Please try again.</p>
+        </div>
+    {% endif %}
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+            <input type="submit" value="login" class="btn btn-xl btn-outline-dark" />
+            <input type="hidden" name="next" value="{{ next }}" />
+        </div>
     </div>
 </form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 
 {% endblock %}

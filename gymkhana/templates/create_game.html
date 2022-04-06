@@ -1,0 +1,39 @@
+{% extends 'base_generic.html' %} 
+{% load i18n %}
+
+{% block header %}
+<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+    {% trans 'CREATE GAME' %}
+</h4>
+{% endblock %}
+
+{% block content %} 
+
+    <section class="page-section portfolio" id="portfolio">
+        <h2> Hello, {{ user_name | default:'Guest' }}! </h2>
+        <h2> Add Gamnes </h2>
+        <div id="content-main"> 
+            <form action="/create_game/" method="POST">{% csrf_token %}
+                <div class="form-group">
+                    <label for="game_title">Game Title</label>
+                    <input type="text" class="form-control" id="game_title" placeholder="Enter Game Name">
+                </div>
+                <div class="form-group">
+                    <label for="game_description">Game Description</label>
+                    <input type="text" class="form-control" id="game_description" name="game_description" placeholder="Enter Game Description">
+               </div>
+        </div>
+        <!--Create a form for upgrate a Game that is varius challenges-->
+    
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+              <form action="/start/" method="GET">
+                  <input type="submit" value="{% trans 'START!' %}" class="btn btn-xl btn-outline-dark">
+              </form>
+            <div class="divider-custom-line"></div>
+        </div>
+
+    </section>
+
+{% endblock %}

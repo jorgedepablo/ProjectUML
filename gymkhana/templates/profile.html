@@ -1,0 +1,43 @@
+{% extends 'base_generic.html' %} 
+{% load i18n %}
+
+{% block header %}
+<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+    {% trans 'PROFILE' %}
+</h4>
+{% endblock %}
+
+{% block content %} 
+
+    <section class="page-section portfolio" id="portfolio">
+        <h2> Hello, {{ user_name | default:'Guest' }}! </h2>
+        <h2> Points: {{ user_points }} </h2>
+        <p> </p>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+              <form action="/start/" method="GET">
+                  <input type="submit" value="{% trans 'START!' %}" class="btn btn-xl btn-outline-dark">
+              </form>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+              <form action="/create_challenge/" method="GET">
+                  <input type="submit" value="{% trans 'UPLOAD CHALLENGE' %}" class="btn btn-xl btn-outline-dark">
+              </form>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+              <form action="/create_game/" method="GET">
+                  <input type="submit" value="{% trans 'CREATE A GAME!' %}" class="btn btn-xl btn-outline-dark">
+              </form>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="container" style="text-align: center;">
+            <a href="{% url 'logout' %}" class="btn btn-xl btn-outline-dark" >Logout</a>
+        </div>
+
+    </section>
+
+{% endblock %}

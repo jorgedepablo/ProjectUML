@@ -44,8 +44,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware', # Manages sessions across requests
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.common.CommonMiddleware', 
+    'django.middleware.csrf.CsrfViewMiddleware', # CSRF protection
     'django.middleware.locale.LocaleMiddleware', # Internationalitation 
     'django.contrib.auth.middleware.AuthenticationMiddleware', # Associates users with requests using sessions.
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'ProjectUML.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/pi/projects/uml/ProjectUML/gymkhana/templates/'],
+        'DIRS': ['./gymkhana/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +136,12 @@ STATICFILES_DIRS = [
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, "locale"),
 )
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/profile/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+# path for uploaded files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

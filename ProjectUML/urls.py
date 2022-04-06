@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from django.conf import settings
+from django.conf.urls.static import static # para poder subir imagenes (static files)
 
 
 from ProjectUML.views import home
@@ -26,6 +28,12 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('', home),
     path('start/', start),
+    path('create_challenge/', create_challenge),
+    path('create_game/', create_game),
     path('challenge/', challenge),
-    path('response/', response)
+    path('response/', response),
+    path('profile/', profile)
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
