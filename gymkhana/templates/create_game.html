@@ -8,32 +8,27 @@
 {% endblock %}
 
 {% block content %} 
-
     <section class="page-section portfolio" id="portfolio">
+
         <h2> Hello, {{ user_name | default:'Guest' }}! </h2>
         <h2> Add Gamnes </h2>
         <div id="content-main"> 
-            <form action="/create_game/" method="POST">{% csrf_token %}
+            <form action="/upload_game/" method="POST" enctype="multipart/form-data">{% csrf_token %}
                 <div class="form-group">
                     <label for="game_title">Game Title</label>
-                    <input type="text" class="form-control" id="game_title" placeholder="Enter Game Name">
+                    <input type="text" class="form-control" id="game_title" name="title" placeholder="Enter Game Name">
                 </div>
                 <div class="form-group">
-                    <label for="game_description">Game Description</label>
-                    <input type="text" class="form-control" id="game_description" name="game_description" placeholder="Enter Game Description">
+                    <label for="game_challenses">Choose one or more challenge for your games.</label>
+                        <select multiple class="form-control" id="game_challenges" name="challenges">
+                            {% for challenge in challenges %}
+                                <option value="{{ challenge.id }}">{{ challenge.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
                </div>
+               <input type="submit" value="{% trans 'upload game' %}" class="btn btn-primary btn-xl">
+            </form>
         </div>
-        <!--Create a form for upgrate a Game that is varius challenges-->
-    
-
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-              <form action="/start/" method="GET">
-                  <input type="submit" value="{% trans 'START!' %}" class="btn btn-xl btn-outline-dark">
-              </form>
-            <div class="divider-custom-line"></div>
-        </div>
-
-    </section>
 
 {% endblock %}

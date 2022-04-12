@@ -1,4 +1,5 @@
 from os import terminal_size
+from datetime import datetime
 from django import template
 from django.shortcuts import HttpResponse
 from django.http import Http404, HttpResponseRedirect
@@ -6,6 +7,7 @@ from django.template import Template, Context, loader
 from django.shortcuts import render
 from gymkhana.utils import *
 from .models import *
+from .forms import *
 from ProjectUML.settings import TEMPLATES
 # Create your views here.
 
@@ -39,31 +41,47 @@ def profile(request):
 
 
 def create_challenge(request):
-    if request.method == 'POST':
-        form = request.POST
-        print(form)
-        #if form.is_valid():
-        #   form.save()
-        return HttpResponseRedirect('/profile/')
-
     if str(request.user) != 'AnonymousUser': 
         user = request.user
         user_is_registered = check_new_user(user)
         if user_is_registered == False:
             return HttpResponse("You must register first")
-        app_user_name, app_user_points = get_user_info(user)
-        diagrams_list = Diagrams.objects.all()
-        data = {'diagrams_list':diagrams_list,
-                'user_name': app_user_name,
-                'user_points': app_user_points, 
+
+        data = {'diagrams_list':Diagrams.objects.all(),
+                'user_name': get_user_info(user)[0],
                 'csrf_token':request.COOKIES['csrftoken']}
         plt = loader.get_template('create_challenge.html')
-        print(app_user_name)
         templ = plt.render(data)
         return HttpResponse(templ)
     else:
         return HttpResponse("You must register first")
 
+def upload_challenge(request):
+    if str(request.user) != 'AnonymousUser': 
+        if request.method == 'POST':
+            print(request.FILES)
+            form = ChallengeForm(request.POST, request.FILES)
+            if form.is_valid():
+                print("Holaaaaa")
+                challenge = Challenges()
+                challenge.name = form.cleaned_data['name']
+                challenge.question = form.cleaned_data['question']
+                challenge.answer = form.cleaned_data['answer']
+                challenge.diagram = "dummy texttt QUITARR"
+                challenge.image = form.cleaned_data['image']
+                challenge.creator = Users.objects.get(email=request.user.email)
+                challenge.diagram_type = form.cleaned_data['diagram_type']
+                challenge.points = form.cleaned_data['points']
+                challenge.created_at = datetime.now()
+                challenge.save()
+                return HttpResponseRedirect('/profile/')
+            else: 
+                print(form.errors)
+                return HttpResponse("Something went wrong")
+        else:
+            return HttpResponse("Something went wrong")
+    else: 
+        return HttpResponse("You must register first")
 
 def create_game(request):
     if str(request.user) != 'AnonymousUser': 
@@ -71,17 +89,31 @@ def create_game(request):
         user_is_registered = check_new_user(user)
         if user_is_registered == False:
             return HttpResponse("You must register first")
-        app_user_name, app_user_points = get_user_info(user)
-        challenges_list = Challenges.objects.all()
-        data = {'challenges_list':challenges_list,
-                'user_name': app_user_name,
-                'user_points': app_user_points, 
+        data = {'challenges':Challenges.objects.all(),
+                'user_name': get_user_info(user)[0],
                 'csrf_token':request.COOKIES['csrftoken']}
         plt = loader.get_template('create_game.html')
-        print(app_user_name)
         templ = plt.render(data)
         return HttpResponse(templ)
     else:
+        return HttpResponse("You must register first")
+
+def upload_game(request):
+    if str(request.user) != 'AnonymousUser': 
+        if request.method == 'POST':
+            form = GameForm(request.POST, request.FILES)
+            if form.is_valid():
+                game = Games()
+                game.creator = Users.objects.get(email=request.user.email)
+                game.title = form.cleaned_data['title']
+                game.created_at = datetime.now()
+                game.save() # it must exist before ManyToMany field
+                game.challenges.set(form.cleaned_data['challenges'])
+                game.save()
+            return HttpResponseRedirect('/profile/')
+        else: 
+            return HttpResponse("Something went wrong")
+    else: 
         return HttpResponse("You must register first")
 
 
@@ -103,15 +135,17 @@ def challenge(request):
     challenge_type_name= _(challenge_type.type) 
     challenge_type_description = _(challenge_type.description)
 
+    data = {"challenge_id":challenge_id,
+            "challenge_title":challege_title, 
+            "challenge_question":challenge_question, 
+            "challenge_diagram":challenge_diagram,
+            "challenge_type_name":challenge_type_name,
+            "challenge_type_description":challenge_type_description,
+            "last_challenge_id":last_challenge,
+            "game_id":game_id}
+
     plt = loader.get_template('challenge.html')
-    templ = plt.render({"challenge_id":challenge_id,
-                "challenge_title":challege_title, 
-                "challenge_question":challenge_question, 
-                "challenge_diagram":challenge_diagram,
-                "challenge_type_name":challenge_type_name,
-                "challenge_type_description":challenge_type_description,
-                "last_challenge_id":last_challenge,
-                "game_id":game_id})
+    templ = plt.render(data)
 
     return HttpResponse(templ)
 
@@ -135,7 +169,7 @@ def response(request):
         if index < (len(challenges_list) - 1): 
             is_last_challenge = False
 
-    key = _(challenge.awnser)
+    key = _(challenge.answer)
     keyword = trans_keyword(keyword, lang)
     is_correct = check_response(key, keyword)
     if is_correct: 

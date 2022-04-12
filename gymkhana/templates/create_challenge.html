@@ -12,28 +12,40 @@
     <section class="page-section portfolio" id="portfolio">
         <h2> Hello, {{ user_name | default:'Guest' }}! </h2>
         <p> Rellena el formulario para subir un challenge</p>
-        
-    <form action="/create_challenge/" method="POST">{% csrf_token %}
-        <div class="form-group">
-            <label for="Challenge Name">Challenge Name:</label>
-            <input type="text" class="form-control" id="challenge_name" name="name" placeholder="Enter Challenge Name">
-        </div>
-        <div class="form-group">
-            <label for="Challenge Question">Question:</label>
-            <input type="text" class="form-control" id="challenge_question" name="question" placeholder="Enter Challenge Description">
-        </div>
-        <div class="form-group">
-            <label for="Challenge Answer">Answer:</label>
-            <input type="text" class="form-control" id="challenge_answer" name="answer" placeholder="Enter Challenge Answer">
-        </div>
-        <div class="form-group">
-            <label for="Diagram Type">Diagram Type</label>
-            <input type="text" class="form-control" id="diagram_type" name="diagram_type" placeholder="Select Diagram Type">
-        </div>
-        <p>Diagram: <input type="text" name="diagram"></p>
-
-        <input type="submit" value="Subir cHALLENGE" />
-    </form>
+        <form action="/upload_challenge/" enctype="multipart/form-data" method="POST">{% csrf_token %}
+            <div class="form-group">
+                <label for="Challenge Name">Challenge Name:</label>
+                <input type="text" class="form-control" id="challenge_name" name="name" placeholder="Enter Challenge Name">
+            </div>
+            <div class="form-group">
+                <label for="Challenge Question">Question:</label>
+                <textarea class="form-control" id="challenge_question" name="question" rows="3" cols="45"> </textarea>
+            </div>
+            <div class="form-group">
+                <label for="Challenge Answer">Answer:</label>
+                <input type="text" class="form-control" id="challenge_answer" name="answer" placeholder="Enter Challenge Answer">
+            </div>
+            <div class="form-group">
+                <label for="diagram_type">Choose the type of the UML diagram:</label>
+                <select class="form-control" id="diagram_type" name="diagram_type">
+                    {% for diagram in diagrams_list %}
+                        <option name="diagram_type" value="{{ diagram.id }}">{{ diagram.diagram_type }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="diagram_file">Choose the image of the UML diagram:</label>
+                <div class="custom-file">
+                    <input type="file" class="btn btn-secondary btn-x1" id="challeng_image" name="image" accept="image/*">
+                    <br>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Challenge Points">Set the points of the challenge:</label>
+                <input type="text" class="form-control" id="challenge_points" name="points" placeholder="Enter Challenge Points (1 to 10)">
+            </div>
+            <input type="submit" value="{% trans 'upload challenge' %}" class="btn btn-primary btn-xl">
+        </form>
 
     </section>
 

@@ -29,11 +29,12 @@ urlpatterns = [
     path('', home),
     path('start/', start),
     path('create_challenge/', create_challenge),
+    path('upload_challenge/', upload_challenge),
     path('create_game/', create_game),
+    path('upload_game/', upload_game),
     path('challenge/', challenge),
     path('response/', response),
     path('profile/', profile)
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

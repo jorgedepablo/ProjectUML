@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('question', models.CharField(max_length=10000)),
-                ('awnser', models.CharField(max_length=100)),
+                ('answer', models.CharField(max_length=100)),
                 ('diagram', models.CharField(max_length=20)),
             ],
         ),
