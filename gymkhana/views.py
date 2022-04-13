@@ -23,7 +23,6 @@ def start(request):
 
     return HttpResponse(templ)
 
-
 def profile(request):
     app_user_name = None
     app_user_points = None
@@ -116,31 +115,26 @@ def upload_game(request):
     else: 
         return HttpResponse("You must register first")
 
-
 def challenge(request):
     game_id = request.GET['game_id']
     last_challenge = int(request.GET['last_challenge'])
     challenge_id = challenge_manager(game_id, last_challenge)
-
     try: 
         challenge = Challenges.objects.get(id=challenge_id)
     except Challenges.DoesNotExist:
         raise Http404("No existe")
 
-    # esto lo podriamos manejar para que sea resistente a errores
-    challenge_type = Diagrams.objects.get(id=challenge.diagram_type_id)
-    challege_title = _(challenge.name)
-    challenge_question = _(challenge.question)
-    challenge_diagram = challenge.diagram
-    challenge_type_name= _(challenge_type.type) 
-    challenge_type_description = _(challenge_type.description)
+    diagram_type = Diagrams.objects.get(id=challenge.diagram_type_id)
+    diagram_type_name = _(diagram_type.diagram_type) # cambiar a name en la próxima actualizaci´´on de models
+    diagram_type_description = _(diagram_type.description)
 
     data = {"challenge_id":challenge_id,
-            "challenge_title":challege_title, 
-            "challenge_question":challenge_question, 
-            "challenge_diagram":challenge_diagram,
-            "challenge_type_name":challenge_type_name,
-            "challenge_type_description":challenge_type_description,
+            "challenge_title":challenge.name, 
+            "challenge_question":challenge.question, 
+            "challenge_image":challenge.image,
+            "diagram_name":diagram_type_name,
+            "diagram_description": diagram_type_description,
+            "points":challenge.points,
             "last_challenge_id":last_challenge,
             "game_id":game_id}
 
@@ -148,7 +142,6 @@ def challenge(request):
     templ = plt.render(data)
 
     return HttpResponse(templ)
-
 
 def response(request): 
     lang = request.LANGUAGE_CODE

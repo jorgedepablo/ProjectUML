@@ -14,7 +14,7 @@ class Users(models.Model):
     updated_at = models.DateTimeField(null=True, default=None)
 
 class Diagrams(models.Model): 
-    diagram_type = models.CharField(max_length=100)
+    diagram_type = models.CharField(max_length=100) # cambiar por name en la próxima actualización de models
     description = models.CharField(max_length=10000)
 
 class Challenges(models.Model): 
@@ -22,7 +22,7 @@ class Challenges(models.Model):
     question = models.CharField(max_length=10000)
     answer = models.CharField(max_length=100)
     diagram = models.CharField(max_length=20) 
-    image = models.ImageField(upload_to='challenges/', null=True, blank=True)
+    image = models.ImageField(upload_to=('challenges/'), null=True, blank=True)
     creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
     diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
     created_at = models.DateTimeField(null=True, default=None)
