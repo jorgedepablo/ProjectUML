@@ -29,7 +29,7 @@
                 <label for="diagram_type">Choose the type of the UML diagram:</label>
                 <select class="form-control" id="diagram_type" name="diagram_type">
                     {% for diagram in diagrams_list %}
-                        <option name="diagram_type" value="{{ diagram.id }}">{{ diagram.diagram_type }} </option>
+                        <option name="diagram_type" value="{{ diagram.id }}">{{ diagram.name }} </option>
                     {% endfor %}
                 </select>
             </div>

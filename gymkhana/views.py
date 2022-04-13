@@ -38,7 +38,6 @@ def profile(request):
 
     return HttpResponse(templ)
 
-
 def create_challenge(request):
     if str(request.user) != 'AnonymousUser': 
         user = request.user
@@ -61,7 +60,6 @@ def upload_challenge(request):
             print(request.FILES)
             form = ChallengeForm(request.POST, request.FILES)
             if form.is_valid():
-                print("Holaaaaa")
                 challenge = Challenges()
                 challenge.name = form.cleaned_data['name']
                 challenge.question = form.cleaned_data['question']
@@ -125,7 +123,7 @@ def challenge(request):
         raise Http404("No existe")
 
     diagram_type = Diagrams.objects.get(id=challenge.diagram_type_id)
-    diagram_type_name = _(diagram_type.diagram_type) # cambiar a name en la próxima actualizaci´´on de models
+    diagram_type_name = _(diagram_type.name) 
     diagram_type_description = _(diagram_type.description)
 
     data = {"challenge_id":challenge_id,
@@ -134,7 +132,6 @@ def challenge(request):
             "challenge_image":challenge.image,
             "diagram_name":diagram_type_name,
             "diagram_description": diagram_type_description,
-            "points":challenge.points,
             "last_challenge_id":last_challenge,
             "game_id":game_id}
 
@@ -144,8 +141,6 @@ def challenge(request):
     return HttpResponse(templ)
 
 def response(request): 
-    lang = request.LANGUAGE_CODE
-    user = request.user
     challenge_id = request.GET['challenge']
     keyword = request.GET['keyword']
     game_id = request.GET['game_id']
@@ -155,30 +150,23 @@ def response(request):
     except Challenges.DoesNotExist:
         raise Http404("No existe")
 
-    challenges_list = list(Games.objects.get(id=game_id).challenges.all())
-    is_last_challenge = True 
-    if len(challenges_list) > 1:
-        index = challenges_list.index(challenge)
-        if index < (len(challenges_list) - 1): 
-            is_last_challenge = False
-
-    key = _(challenge.answer)
-    keyword = trans_keyword(keyword, lang)
-    is_correct = check_response(key, keyword)
+    is_last_challenge = check_last_challenge(game_id, challenge_id)
+    is_correct = check_response(challenge.answer, keyword)
     if is_correct: 
         template = 'success.html'
-        increase_user_points(user, challenge)
+        increase_user_points(request.user, challenge)
     else:
         template = 'wrong.html'
-    app_user_name, app_user_points = get_user_info(user)
+    app_user_name, app_user_points = get_user_info(request.user)
 
+    data = {"challenge_id":challenge_id,
+            "is_last_challenge":is_last_challenge,
+            "last_challenge":last_challenge_id,
+            "user_name":app_user_name,
+            "user_points":app_user_points,
+            "game_id":game_id}
     plt = loader.get_template(template)
-    templ = plt.render({"challenge_id":challenge_id,
-                "is_last_challenge":is_last_challenge,
-                "last_challenge":last_challenge_id,
-                "user_name":app_user_name,
-                "user_points":app_user_points,
-                "game_id":game_id})
+    templ = plt.render(data)
 
     return HttpResponse(templ)
 

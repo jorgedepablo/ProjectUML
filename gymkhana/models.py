@@ -9,12 +9,12 @@ class Users(models.Model):
     email = models.EmailField()
     admin = models.BooleanField(default=False)
     points = models.IntegerField(default=0)
-    challenges_passed = models.ForeignKey('Challenges', on_delete=models.CASCADE, null=True, blank=True)
+    challenges_passed = models.ManyToManyField('Challenges', blank=True)
     created_at = models.DateTimeField(null=True, default=None)
     updated_at = models.DateTimeField(null=True, default=None)
 
 class Diagrams(models.Model): 
-    diagram_type = models.CharField(max_length=100) # cambiar por name en la próxima actualización de models
+    name = models.CharField(max_length=100) # cambiar por name en la próxima actualización de
     description = models.CharField(max_length=10000)
 
 class Challenges(models.Model): 
@@ -26,7 +26,6 @@ class Challenges(models.Model):
     creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
     diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
     created_at = models.DateTimeField(null=True, default=None)
-    updated_at = models.DateTimeField(null=True, default=None)
     points = models.IntegerField(default=0)
 
 class Games(models.Model): 
@@ -34,6 +33,5 @@ class Games(models.Model):
     challenges = models.ManyToManyField(Challenges)
     creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
     created_at = models.DateTimeField(null=True, default=None)
-    updated_at = models.DateTimeField(null=True, default=None)
 
 
