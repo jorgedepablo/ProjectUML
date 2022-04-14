@@ -89,7 +89,7 @@ def check_response(key, keyword):
 def check_last_challenge(game, challenge):
     """Check if the challenge is the last challenge of the game."""
     last_challenge = True
-    challenges = Games.objects.get(id=game).challenges.all()
+    challenges = list(Games.objects.get(id=game).challenges.all())
     if len(challenges) > 1: 
         if int(challenges[-1].id) != int(challenge): 
             last_challenge = False
