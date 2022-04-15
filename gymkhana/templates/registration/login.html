@@ -11,10 +11,10 @@
 
 {% if next %}
     {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
+    <p>{% trans 'Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.' %}</p>
     {% else %}
-    <p>Please login to see this page.</p>
+    <p>{% trans 'Please login to see this page.' %}</p>
     {% endif %}
 {% endif %}
 
@@ -34,7 +34,7 @@
     </div>
     {% if form.errors %}
         <div class="text-center">
-            <p>Your username and password didn't match. Please try again.</p>
+            <p>{% trans 'Your username and password didn`t match. Please try again.' %}</p>
         </div>
     {% endif %}
     <div class="divider-custom divider-light">

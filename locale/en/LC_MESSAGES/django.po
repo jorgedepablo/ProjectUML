@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-25 17:13+0000\n"
+"POT-Creation-Date: 2022-04-14 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,78 +18,170 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ProjectUML/settings.py:114
+#: ProjectUML/settings.py:115
 msgid "Spanish"
 msgstr ""
 
-#: ProjectUML/settings.py:115
+#: ProjectUML/settings.py:116
 msgid "English"
 msgstr ""
 
-#: gymkhana/templates/challenge.html:10
-msgid "Challenge "
-msgstr ""
-
-#: gymkhana/templates/challenge.html:39
+#: gymkhana/templates/challenge.html:7
 msgid "UML: "
 msgstr ""
 
-#: gymkhana/templates/challenge.html:56
+#: gymkhana/templates/challenge.html:24
 msgid "send"
 msgstr ""
 
-#: gymkhana/templates/home.html:45
+#: gymkhana/templates/create_challenge.html:6
+msgid "CREATE CHALLENGE"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:14
+msgid "Fill in the form to upload a challenge"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:17
+msgid "Challenge Name:"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:18
+msgid "Enter Challenge Name"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:21
+msgid "Question:"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:25
+msgid "Answer:"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:26
+msgid "Enter Challenge Answer"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:29
+msgid "Choose the type of the UML diagram:"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:37
+msgid "Choose the image of the UML diagram:"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:44
+msgid "Set the points of the challenge:"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:45
+msgid "Enter Challenge Points (1 to 10)"
+msgstr ""
+
+#: gymkhana/templates/create_challenge.html:47
+msgid "upload challenge"
+msgstr ""
+
+#: gymkhana/templates/create_game.html:6
+msgid "CREATE GAME"
+msgstr ""
+
+#: gymkhana/templates/create_game.html:14
+msgid "Add Gamnes"
+msgstr ""
+
+#: gymkhana/templates/create_game.html:18
+msgid "Game Title"
+msgstr ""
+
+#: gymkhana/templates/create_game.html:19
+msgid "Enter Game Name"
+msgstr ""
+
+#: gymkhana/templates/create_game.html:22
+msgid "Choose one or more challenge for your games."
+msgstr ""
+
+#: gymkhana/templates/create_game.html:30
+msgid "upload game"
+msgstr ""
+
+#: gymkhana/templates/home.html:11 gymkhana/templates/profile.html:21
 msgid "START!"
 msgstr ""
 
-#: gymkhana/templates/home.html:50
+#: gymkhana/templates/home.html:15
 msgid "Have fun, train and learn about Unified Modeling Language"
 msgstr ""
 
-#: gymkhana/templates/start.html:38
+#: gymkhana/templates/home.html:23
+msgid "You can login for more features!"
+msgstr ""
+
+#: gymkhana/templates/profile.html:8
+msgid "PROFILE"
+msgstr ""
+
+#: gymkhana/templates/profile.html:28
+msgid "UPLOAD CHALLENGE"
+msgstr ""
+
+#: gymkhana/templates/profile.html:35
+msgid "CREATE A GAME!"
+msgstr ""
+
+#: gymkhana/templates/registration/login.html:6
+msgid "LOGIN"
+msgstr ""
+
+#: gymkhana/templates/registration/login.html:17
+msgid "Please login to see this page."
+msgstr ""
+
+#: gymkhana/templates/registration/login.html:37
+msgid "Your username and password didn`t match. Please try again."
+msgstr ""
+
+#: gymkhana/templates/start.html:7
 msgid "Init the gymkhana app..."
 msgstr ""
 
-#: gymkhana/templates/start.html:67
+#: gymkhana/templates/start.html:38
 msgid "NO GAMES TO PLAY :("
 msgstr ""
 
-#: gymkhana/templates/success.html:9
-msgid "CORRECT"
-msgstr ""
-
-#: gymkhana/templates/success.html:40
+#: gymkhana/templates/success.html:7
 msgid "CONGRATS, CORRECT ANSWER !!"
 msgstr ""
 
-#: gymkhana/templates/success.html:46
+#: gymkhana/templates/success.html:15
 msgid "You`ve finished this gymkhana. Let`s go for more games :)"
 msgstr ""
 
-#: gymkhana/templates/success.html:48
+#: gymkhana/templates/success.html:17 gymkhana/templates/wrong.html:22
 msgid "Return to gymkhana app"
 msgstr ""
 
-#: gymkhana/templates/success.html:55
+#: gymkhana/templates/success.html:24
 msgid "Let`s go for the next challenge. :)"
 msgstr ""
 
-#: gymkhana/templates/success.html:57
+#: gymkhana/templates/success.html:26
 msgid "Next Challenge"
 msgstr ""
 
-#: gymkhana/templates/wrong.html:9
-msgid "NOT CORRECT"
-msgstr ""
-
-#: gymkhana/templates/wrong.html:40
+#: gymkhana/templates/wrong.html:7
 msgid "WRONG ANSWER"
 msgstr ""
 
-#: gymkhana/templates/wrong.html:45
-msgid "Sorry, but you can alwais try again. :)"
+#: gymkhana/templates/wrong.html:14
+msgid "Sorry, but you can always try again. :)"
 msgstr ""
 
-#: gymkhana/templates/wrong.html:47
+#: gymkhana/templates/wrong.html:16
 msgid "Return to the challenge"
+msgstr ""
+
+#: gymkhana/templates/wrong.html:20
+msgid "or"
 msgstr ""

@@ -5,13 +5,14 @@ from django.shortcuts import HttpResponse
 from django.http import Http404, HttpResponseRedirect
 from django.template import Template, Context, loader
 from django.shortcuts import render
+from django.utils.translation import gettext as _
 from gymkhana.utils import *
 from .models import *
 from .forms import *
 from ProjectUML.settings import TEMPLATES
 # Create your views here.
 
-_ = lambda s: s
+#_ = lambda s: s
 
 def start(request): 
     try: 

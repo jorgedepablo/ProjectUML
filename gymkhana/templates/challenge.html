@@ -12,7 +12,7 @@
 <div class="container">
     <p>{% trans diagram_description %}</p>
 
-    <h3>{% trans challenge_question %}</h3>
+    <h3>{{challenge_question}}</h3>
     <img src="{{challenge_image.url}}" style="padding-top: 30px; padding-bottom: 40px; margin: 10px auto 10px; display: block;">
     <form action="/response/" method="GET" style="text-align: center;">
         <div style="padding-top: 10px; padding-bottom: 10px; padding-left: 37%;">
