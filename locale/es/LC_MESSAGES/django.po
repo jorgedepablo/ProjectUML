@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 14:49+0000\n"
+"POT-Creation-Date: 2022-04-20 22:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,3 +191,9 @@ msgstr "o"
 
 #~ msgid "NOT CORRECT"
 #~ msgstr "INCORRECTO"
+
+#~ msgid "Class Diagram"
+#~ msgstr "Diagrama de Clases"
+
+#~ msgid "A class diagram in the Unified Modeling Language (UML) is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among objects."
+#~ msgstr "Un diagrama de clases en el Lenguaje Unificado Modelado (UML) es un tipo de diagrama estructural estático que describe la estructura de un sistema mostrando las clases del sistema, sus atributos, operaciones (o métodos) y las relaciones entre objetos."

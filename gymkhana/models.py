@@ -21,10 +21,9 @@ class Challenges(models.Model):
     name = models.CharField(max_length=50) 
     question = models.CharField(max_length=10000)
     answer = models.CharField(max_length=100)
-    diagram = models.CharField(max_length=20) 
+    diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
     image = models.ImageField(upload_to=('challenges/'), null=True, blank=True)
     creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
-    diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
     created_at = models.DateTimeField(null=True, default=None)
     points = models.IntegerField(default=0)
 
