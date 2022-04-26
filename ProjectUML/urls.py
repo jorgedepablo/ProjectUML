@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+from django.conf import settings
+from django.conf.urls.static import static # para poder subir imagenes (static files)
+
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,8 +28,16 @@ from gymkhana.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', home),
     path('start/', start),
+    path('create_challenge/', create_challenge),
+    path('upload_challenge/', upload_challenge),
+    path('create_game/', create_game),
+    path('upload_game/', upload_game),
     path('challenge/', challenge),
-    path('response/', response)
+    path('response/', response),
+    path('profile/', profile)
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

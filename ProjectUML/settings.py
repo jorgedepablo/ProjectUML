@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes', # Django content type system (allows permissions to be associated with models).
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -45,11 +45,19 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+<<<<<<< HEAD
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.locale.LocaleMiddleware', # internationalitation
+=======
+    'django.contrib.sessions.middleware.SessionMiddleware', # Manages sessions across requests
+    'django.middleware.common.CommonMiddleware', 
+    'django.middleware.csrf.CsrfViewMiddleware', # CSRF protection
+    'django.middleware.locale.LocaleMiddleware', # Internationalitation 
+    'django.contrib.auth.middleware.AuthenticationMiddleware', # Associates users with requests using sessions.
+>>>>>>> develop
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -60,9 +68,13 @@ ROOT_URLCONF = 'ProjectUML.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [
             os.path.join(BASE_DIR, 'gymkhana/templates/'),
         ],
+=======
+        'DIRS': ['./gymkhana/templates/'],
+>>>>>>> develop
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,6 +99,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 if config('DJANGO_PRODUCTION', default=False, cast=bool):
     from .settings_production import *
@@ -118,7 +131,7 @@ LANGUAGE_CODE = 'en-us'
 _ = lambda s: s
 
 LANGUAGES = (
-    ('es', _('Spanish')),
+    ('es', _('Spanish')), 
     ('en', _('English')),
 )
 
@@ -136,7 +149,6 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -145,4 +157,15 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, "locale"),
 )
 
+<<<<<<< HEAD
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+=======
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/profile/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+# path for uploaded files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'gymkhana/static/media')
+>>>>>>> develop

@@ -1,111 +1,34 @@
-<!DOCTYPE html>
+{% extends 'base_generic.html' %} 
+{% load i18n %}
+{% load static %}
 
-<html lang="en">
-    <head>
-        {% load static %}
-        {% load i18n %}
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title> {% trans 'CORRECT' %}</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-    </head>
+{% block header %}
+<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+    {% trans 'CONGRATS, CORRECT ANSWER !!' %}
+</h4>
+{% endblock %}
 
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="/">UML PROJECT</a>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a title="" href="https://www.uml.org/"><img src="{% static 'assets/img/UML_logo.png' %}" width="70" height="70"></a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center" display=none>
-        <!-- Portfolio Section Heading-->
-        <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">{% trans 'CONGRATS, CORRECT ANSWER !!' %}</h1>
-        </header>
-
-        {% if is_last_challenge %}
-            <section class="page-section portfolio" id="portfolio" >
-                <div class="container" style="text-align: center;">
-                    <h2> {% trans 'You`ve finished this gymkhana. Let`s go for more games :)' %} </h2> 
-                    <form action="/start/" method="GET">
-                        <input type="submit" value="{% trans 'Return to gymkhana app' %}" class="btn btn-primary btn-xl">
-                    </form>
-                </div>
-            </section>
-        {% else %}
-            <section class="page-section portfolio" id="portfolio" >
-                <div class="container" style="text-align: center;">
-                    <h2> {% trans 'Let`s go for the next challenge. :)' %} </h2> 
-                    <form action="/challenge/" method="GET">
-                        <input type="submit" value="{% trans 'Next Challenge' %}" class="btn btn-primary btn-xl">
-                        <input name="game_id" type="hidden" value={{game_id}}>
-                        <input name="last_challenge" type="hidden" value={{challenge_id}}>
-                    </form>
-                </div>
-            </section>
-        {% endif %}
-
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            Camino del Molino s/n
-                            <br />
-                            Fuenlabrada, Madrid 28943
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/ETSIT_URJC"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.urjc.es/etsit"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © GNU GENERAL PUBLIC LICENSE</small></div>
+{% block content %}
+{% if is_last_challenge %}
+    <section class="page-section portfolio" id="portfolio" >
+        <div class="container" style="text-align: center;">
+            <h2> {% trans 'You`ve finished this gymkhana. Let`s go for more games :)' %} </h2> 
+            <form action="/start/" method="GET">
+                <input type="submit" value="{% trans 'Return to gymkhana app' %}" class="btn btn-primary btn-xl">
+            </form>
         </div>
+    </section>
+{% else %}
+    <section class="page-section portfolio" id="portfolio" >
+        <div class="container" style="text-align: center;">
+            <h2> {% trans 'Let`s go for the next challenge. :)' %} </h2> 
+            <form action="/challenge/" method="GET">
+                <input type="submit" value="{% trans 'Next Challenge' %}" class="btn btn-primary btn-xl">
+                <input name="game_id" type="hidden" value={{game_id}}>
+                <input name="last_challenge" type="hidden" value={{challenge_id}}>
+            </form>
+        </div>
+    </section>
+{% endif %}
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="% static 'js/scripts.js' %}"></script>
-    </body>
-
-</html>
+{% endblock %}

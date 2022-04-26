@@ -7,24 +7,30 @@ from django.db.models.signals import ModelSignal
 class Users(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField()
-    admin = models.BooleanField()
+    admin = models.BooleanField(default=False)
+    points = models.IntegerField(default=0)
+    challenges_passed = models.ManyToManyField('Challenges', blank=True)
+    created_at = models.DateTimeField(null=True, default=None)
+    updated_at = models.DateTimeField(null=True, default=None)
 
 class Diagrams(models.Model): 
-    type = models.CharField(max_length=100)
+    name = models.CharField(max_length=100) # cambiar por name en la próxima actualización de
     description = models.CharField(max_length=10000)
 
 class Challenges(models.Model): 
-    #diagram_type = models.ForeignKey(Diagrams)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50) 
     question = models.CharField(max_length=10000)
-    awnser = models.CharField(max_length=100)
-    diagram = models.CharField(max_length=20) 
-    creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    answer = models.CharField(max_length=100)
     diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
+    image = models.ImageField(upload_to=('challenges/'), null=True, blank=True)
+    creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    created_at = models.DateTimeField(null=True, default=None)
+    points = models.IntegerField(default=0)
 
 class Games(models.Model): 
     title = models.CharField(max_length=50)
     challenges = models.ManyToManyField(Challenges)
     creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    created_at = models.DateTimeField(null=True, default=None)
 
 

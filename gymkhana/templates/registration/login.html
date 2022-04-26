@@ -1,0 +1,48 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+{% block header %}
+<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+    {% trans 'LOGIN' %}
+</h4>
+{% endblock %}
+
+{% block content %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>{% trans 'Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.' %}</p>
+    {% else %}
+    <p>{% trans 'Please login to see this page.' %}</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" style="text-align: center;" action="{% url 'login' %} ">
+{% csrf_token %}
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </div>
+    </div>
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </div>
+    </div>
+    {% if form.errors %}
+        <div class="text-center">
+            <p>{% trans 'Your username and password didn`t match. Please try again.' %}</p>
+        </div>
+    {% endif %}
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+            <input type="submit" value="login" class="btn btn-x3 btn-outline-dark" />
+            <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+    </div>
+</form>
+
+{% endblock %}

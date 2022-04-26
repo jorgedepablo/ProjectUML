@@ -1,0 +1,52 @@
+{% extends 'base_generic.html' %} 
+{% load i18n %}
+
+{% block header %}
+<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+    {% trans 'CREATE CHALLENGE' %}
+</h4>
+{% endblock %}
+
+{% block content %} 
+
+    <section class="page-section portfolio" id="portfolio">
+        <h2> Hello, {{ user_name | default:'Guest' }}! </h2>
+        <p> {% trans 'Fill in the form to upload a challenge' %}</p>
+        <form action="/upload_challenge/" enctype="multipart/form-data" method="POST">{% csrf_token %}
+            <div class="form-group">
+                <label for="Challenge Name">{% trans 'Challenge Name:' %}</label>
+                <input type="text" class="form-control" id="challenge_name" name="name" placeholder="{% trans 'Enter Challenge Name' %}">
+            </div>
+            <div class="form-group">
+                <label for="Challenge Question">{% trans 'Question:' %}</label>
+                <textarea class="form-control" id="challenge_question" name="question" rows="3" cols="45"> </textarea>
+            </div>
+            <div class="form-group">
+                <label for="Challenge Answer">{% trans 'Answer:' %}</label>
+                <input type="text" class="form-control" id="challenge_answer" name="answer" placeholder="{% trans 'Enter Challenge Answer' %}">
+            </div>
+            <div class="form-group">
+                <label for="diagram_type">{% trans 'Choose the type of the UML diagram:' %}</label>
+                <select class="form-control" id="diagram_type" name="diagram_type">
+                    {% for diagram in diagrams_list %}
+                        <option name="diagram_type" value="{{ diagram.id }}">{% trans diagram.name %}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="diagram_file">{% trans 'Choose the image of the UML diagram:' %}</label>
+                <div class="custom-file">
+                    <input type="file" class="btn btn-x3 btn-outline-dark" id="challeng_image" name="image" accept="image/*">
+                    <br>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Challenge Points">{% trans 'Set the points of the challenge:' %}</label>
+                <input type="text" class="form-control" id="challenge_points" name="points" placeholder="{% trans 'Enter Challenge Points (1 to 10)' %}">
+            </div>
+            <input type="submit" value="{% trans 'upload challenge' %}" class="btn btn-primary btn-xl">
+        </form>
+
+    </section>
+
+{% endblock %}

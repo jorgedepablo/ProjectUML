@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-25 17:13+0000\n"
+"POT-Creation-Date: 2022-04-20 22:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,157 +18,182 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ProjectUML/settings.py:114
+#: ProjectUML/settings.py:115
 msgid "Spanish"
 msgstr "Español"
 
-#: ProjectUML/settings.py:115
+#: ProjectUML/settings.py:116
 msgid "English"
 msgstr "Inglés"
 
-#: gymkhana/templates/challenge.html:10
-msgid "Challenge "
-msgstr "Reto "
-
-#: gymkhana/templates/challenge.html:39
+#: gymkhana/templates/challenge.html:7
 msgid "UML: "
 msgstr "UML: "
 
-#: gymkhana/templates/challenge.html:56
+#: gymkhana/templates/challenge.html:24
 msgid "send"
 msgstr "enviar"
 
-#: gymkhana/templates/home.html:45
+#: gymkhana/templates/create_challenge.html:6
+msgid "CREATE CHALLENGE"
+msgstr "CREAR DESAFÍO"
+
+#: gymkhana/templates/create_challenge.html:14
+msgid "Fill in the form to upload a challenge"
+msgstr "Rellena el formulario para subir un reto"
+
+#: gymkhana/templates/create_challenge.html:17
+msgid "Challenge Name:"
+msgstr "Nombre del reto:"
+
+#: gymkhana/templates/create_challenge.html:18
+msgid "Enter Challenge Name"
+msgstr "Introduce el Nombre del Reto"
+
+#: gymkhana/templates/create_challenge.html:21
+msgid "Question:"
+msgstr "Pregunta:"
+
+#: gymkhana/templates/create_challenge.html:25
+msgid "Answer:"
+msgstr "Respuesta:"
+
+#: gymkhana/templates/create_challenge.html:26
+msgid "Enter Challenge Answer"
+msgstr "Introduce la Respuesta del Reto"
+
+#: gymkhana/templates/create_challenge.html:29
+msgid "Choose the type of the UML diagram:"
+msgstr "Elige el tipo de diagrama UML:"
+
+#: gymkhana/templates/create_challenge.html:37
+msgid "Choose the image of the UML diagram:"
+msgstr "Elige la imagen del diagrama UML:"
+
+#: gymkhana/templates/create_challenge.html:44
+msgid "Set the points of the challenge:"
+msgstr "Establece los puntos del reto:"
+
+#: gymkhana/templates/create_challenge.html:45
+msgid "Enter Challenge Points (1 to 10)"
+msgstr "Introduce los Puntos del Reto (1 a 10)"
+
+#: gymkhana/templates/create_challenge.html:47
+msgid "upload challenge"
+msgstr "subir reto"
+
+#: gymkhana/templates/create_game.html:6
+msgid "CREATE GAME"
+msgstr "CREAR UN JUEGO"
+
+#: gymkhana/templates/create_game.html:14
+msgid "Add Gamnes"
+msgstr "Añade Juegos"
+
+#: gymkhana/templates/create_game.html:18
+msgid "Game Title"
+msgstr "Título del Juego"
+
+#: gymkhana/templates/create_game.html:19
+msgid "Enter Game Name"
+msgstr "Introduce el Nombre del Juego"
+
+#: gymkhana/templates/create_game.html:22
+msgid "Choose one or more challenge for your games."
+msgstr "Elige uno o más retos para tu juego."
+
+#: gymkhana/templates/create_game.html:30
+msgid "upload game"
+msgstr "subir juego"
+
+#: gymkhana/templates/home.html:11 gymkhana/templates/profile.html:21
 msgid "START!"
 msgstr "¡EMPEZAR!"
 
-#: gymkhana/templates/home.html:50
+#: gymkhana/templates/home.html:15
 msgid "Have fun, train and learn about Unified Modeling Language"
 msgstr "Divierte, entrena y aprende sobre Lenguaje Unificado Modelado"
 
-#: gymkhana/templates/start.html:38
+#: gymkhana/templates/home.html:23
+msgid "You can login for more features!"
+msgstr "¡Puedes iniciar sesión para más funcionalidades!"
+
+#: gymkhana/templates/profile.html:8
+msgid "PROFILE"
+msgstr "PERFIL"
+
+#: gymkhana/templates/profile.html:28
+msgid "UPLOAD CHALLENGE"
+msgstr "SUBIR DESAFÍO"
+
+#: gymkhana/templates/profile.html:35
+msgid "CREATE A GAME!"
+msgstr "¡CREA UN JUEGO!"
+
+#: gymkhana/templates/registration/login.html:6
+msgid "LOGIN"
+msgstr "INICIAR SESIÓN"
+
+#: gymkhana/templates/registration/login.html:17
+msgid "Please login to see this page."
+msgstr "Por favor, inicia sesión para ver esta página."
+
+#: gymkhana/templates/registration/login.html:37
+msgid "Your username and password didn`t match. Please try again."
+msgstr "Tu nombre de usuario y contraseña no coinciden. Por favor, inténtalo de nuevo."
+
+#: gymkhana/templates/start.html:7
 msgid "Init the gymkhana app..."
 msgstr "Iniciando gymkhana app..."
 
-#: gymkhana/templates/start.html:67
+#: gymkhana/templates/start.html:38
 msgid "NO GAMES TO PLAY :("
 msgstr "NINGÚN JUEGO AL QUE JUGAR :("
 
-#: gymkhana/templates/success.html:9
-msgid "CORRECT"
-msgstr "CORRECTO"
-
-#: gymkhana/templates/success.html:40
+#: gymkhana/templates/success.html:7
 msgid "CONGRATS, CORRECT ANSWER !!"
 msgstr "ENHORABUENA, TU RESPUESTA ES CORRECTA !!"
 
-#: gymkhana/templates/success.html:46
+#: gymkhana/templates/success.html:15
 msgid "You`ve finished this gymkhana. Let`s go for more games :)"
 msgstr "Has terminado esta gymkhana. Vamos a por otros retos :)"
 
-#: gymkhana/templates/success.html:48
+#: gymkhana/templates/success.html:17 gymkhana/templates/wrong.html:22
 msgid "Return to gymkhana app"
 msgstr "Volver a la gymkhana"
 
-#: gymkhana/templates/success.html:55
+#: gymkhana/templates/success.html:24
 msgid "Let`s go for the next challenge. :)"
 msgstr "Vamos a por el siguiente reto :)"
 
-#: gymkhana/templates/success.html:57
+#: gymkhana/templates/success.html:26
 msgid "Next Challenge"
 msgstr "Siguiente Reto"
 
-#: gymkhana/templates/wrong.html:9
-msgid "NOT CORRECT"
-msgstr "INCORRECTO"
-
-#: gymkhana/templates/wrong.html:40
+#: gymkhana/templates/wrong.html:7
 msgid "WRONG ANSWER"
 msgstr "RESPUESTA INCORRECTA"
 
-#: gymkhana/templates/wrong.html:45
-msgid "Sorry, but you can alwais try again. :)"
+#: gymkhana/templates/wrong.html:14
+msgid "Sorry, but you can always try again. :)"
 msgstr "Lo siento, pero siempre puedes volver a intentarlo :)"
 
-#: gymkhana/templates/wrong.html:47
+#: gymkhana/templates/wrong.html:16
 msgid "Return to the challenge"
-msgstr "Volver a la gymkhana"
+msgstr "Volver al reto"
 
-#~ msgid "Challenge Flowchart Diagram"
-#~ msgstr "Reto Diagrama de Flujo"
+#: gymkhana/templates/wrong.html:20
+msgid "or"
+msgstr "o"
 
-#~ msgid "UML: Activity diagrams"
-#~ msgstr "UML: Diagramas de Actividad"
+#~ msgid "CORRECT"
+#~ msgstr "CORRECTO"
 
-#~ msgid ""
-#~ "The flowchart shows the steps as boxes of various kinds, and their order "
-#~ "by connecting the boxes with arrows. This diagrammatic representation "
-#~ "illustrates a solution model to a given problem."
-#~ msgstr ""
-#~ "El diagramde de flujo muestra procesos como cajas de varios tipos que "
-#~ "están conectadas por flechas. Este esquema representativo ilustra un "
-#~ "modelo de solución a un problema dado. "
+#~ msgid "NOT CORRECT"
+#~ msgstr "INCORRECTO"
 
-#~ msgid " Resolve the next flowchart diagram to find the keyword "
-#~ msgstr ""
-#~ "Resuelve el siguiente diaagrama de flujo para encontrar la palabra clave "
+#~ msgid "Class Diagram"
+#~ msgstr "Diagrama de Clases"
 
-#~ msgid "Challenge Use Case Diagram"
-#~ msgstr "Reto Diagrama Caso de Uso"
-
-#~ msgid "UML: Behavioral diagrams"
-#~ msgstr "UML: Diagramas de Comportamiento"
-
-#~ msgid ""
-#~ "A use case diagram at its simplest is a representation of a user`s "
-#~ "possible interaction with the system that shows the relationship between "
-#~ "the user and the different use cases in which the user is involved."
-#~ msgstr ""
-#~ "Un diagrama de casos de uso es una descripción gráfica de las posibles "
-#~ "interaciones de un usuario con un sistema que muestra las relacciones "
-#~ "entre el usuario y las diferentes causísticas en las que el usuario está "
-#~ "involucrado."
-
-#~ msgid "The keyword is the answer to the next question:"
-#~ msgstr "La palabra clave es la respuesta a la siguiente pregunta: "
-
-#~ msgid ""
-#~ "Which of the options that the survivor can do in a zombie apocalypse "
-#~ "definitely SHOULD NOT take in first place ?"
-#~ msgstr ""
-#~ "¿Cúal de las siguientes opciones que un superviviente puede tomar "
-#~ "claramente NO DEBERÍA tomar en primer lugar?"
-
-#~ msgid "UML: Structural diagrams"
-#~ msgstr "UML: Diagranmas Estructurales"
-
-#~ msgid ""
-#~ "The class diagram is a type of static structure diagram that describes "
-#~ "the structure of a system by showing the system´s classes, their "
-#~ "attributes, operations (or methods), and the relationships among objects."
-#~ msgstr ""
-#~ "Los diagramas de clase es un tripo de diagrama estructural estático que "
-#~ "describe la estructura de un sistema mostranto sus clases, atributos, "
-#~ "métodos y relacciones entre los objetos."
-
-#~ msgid ""
-#~ "In which of the following classes on the diagram would superman belong?"
-#~ msgstr "¿A cuál de las siguientes clases pertenece Superman?"
-
-#~ msgid "Game 1"
-#~ msgstr "Juego 1"
-
-#~ msgid "Game 2"
-#~ msgstr "Juego 2"
-
-#~ msgid "Game 3"
-#~ msgstr "Juego 3"
-
-#~ msgid "nal hutta"
-#~ msgstr "nal hutta"
-
-#~ msgid "fight zombies"
-#~ msgstr "luchar contra zombies"
-
-#~ msgid "no humans"
-#~ msgstr "no humanos"
+#~ msgid "A class diagram in the Unified Modeling Language (UML) is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among objects."
+#~ msgstr "Un diagrama de clases en el Lenguaje Unificado Modelado (UML) es un tipo de diagrama estructural estático que describe la estructura de un sistema mostrando las clases del sistema, sus atributos, operaciones (o métodos) y las relaciones entre objetos."
