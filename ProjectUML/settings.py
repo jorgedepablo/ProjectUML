@@ -45,19 +45,11 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-<<<<<<< HEAD
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # internationalitation
-=======
     'django.contrib.sessions.middleware.SessionMiddleware', # Manages sessions across requests
     'django.middleware.common.CommonMiddleware', 
     'django.middleware.csrf.CsrfViewMiddleware', # CSRF protection
     'django.middleware.locale.LocaleMiddleware', # Internationalitation 
     'django.contrib.auth.middleware.AuthenticationMiddleware', # Associates users with requests using sessions.
->>>>>>> develop
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -68,13 +60,7 @@ ROOT_URLCONF = 'ProjectUML.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': [
-            os.path.join(BASE_DIR, 'gymkhana/templates/'),
-        ],
-=======
         'DIRS': ['./gymkhana/templates/'],
->>>>>>> develop
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -157,9 +143,7 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, "locale"),
 )
 
-<<<<<<< HEAD
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-=======
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/'
@@ -168,4 +152,3 @@ LOGOUT_REDIRECT_URL = '/'
 # path for uploaded files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'gymkhana/static/media')
->>>>>>> develop
