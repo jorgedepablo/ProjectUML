@@ -21,16 +21,16 @@ class Challenges(models.Model):
     name = models.CharField(max_length=50) 
     question = models.CharField(max_length=10000)
     answer = models.CharField(max_length=100)
-    diagram_type = models.ForeignKey(Diagrams, on_delete=models.CASCADE, default="")
+    diagram_type = models.ForeignKey(Diagrams, on_delete=models.RESTRICT, default="")
     image = models.ImageField(upload_to=('challenges/'), null=True, blank=True)
-    creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    creator = models.ForeignKey(Users, on_delete=models.RESTRICT, default="")
     created_at = models.DateTimeField(null=True, default=None)
     points = models.IntegerField(default=0)
 
 class Games(models.Model): 
     title = models.CharField(max_length=50)
     challenges = models.ManyToManyField(Challenges)
-    creator = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    creator = models.ForeignKey(Users, on_delete=models.RESTRICT, default="")
     created_at = models.DateTimeField(null=True, default=None)
 
 
