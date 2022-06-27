@@ -10,7 +10,6 @@
 {% block content %} 
     <section class="page-section portfolio" id="portfolio">
 
-        <h2> Hello, {{ user_name | default:'Guest' }}! </h2>
         <h2> {% trans 'Add Gamnes' %}</h2>
         <div id="content-main"> 
             <form action="/upload_game/" method="POST" enctype="multipart/form-data">{% csrf_token %}

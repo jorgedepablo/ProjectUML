@@ -12,7 +12,7 @@ from .forms import *
 from ProjectUML.settings import TEMPLATES
 # Create your views here.
 
-#_ = lambda s: s
+_ = lambda s: s
 
 def start(request): 
     try: 
@@ -131,8 +131,8 @@ def challenge(request):
             "challenge_title":challenge.name, 
             "challenge_question":challenge.question, 
             "challenge_image":challenge.image,
-            "diagram_name":diagram_type_name,
-            "diagram_description": diagram_type_description,
+            "diagram_name":_(diagram_type_name),
+            "diagram_description": _(diagram_type_description),
             "last_challenge_id":last_challenge,
             "game_id":game_id}
 

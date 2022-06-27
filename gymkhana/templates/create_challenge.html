@@ -10,8 +10,7 @@
 {% block content %} 
 
     <section class="page-section portfolio" id="portfolio">
-        <h2> Hello, {{ user_name | default:'Guest' }}! </h2>
-        <p> {% trans 'Fill in the form to upload a challenge' %}</p>
+        <h2>{% trans 'Fill in the form to upload a challenge' %}</h2>
         <form action="/upload_challenge/" enctype="multipart/form-data" method="POST">{% csrf_token %}
             <div class="form-group">
                 <label for="Challenge Name">{% trans 'Challenge Name:' %}</label>

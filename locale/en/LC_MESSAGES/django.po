@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 22:13+0000\n"
+"POT-Creation-Date: 2022-06-27 20:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ProjectUML/settings.py:115
+#: ProjectUML/settings.py:120
 msgid "Spanish"
 msgstr ""
 
-#: ProjectUML/settings.py:116
+#: ProjectUML/settings.py:121
 msgid "English"
 msgstr ""
 
@@ -38,47 +38,47 @@ msgstr ""
 msgid "CREATE CHALLENGE"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:14
+#: gymkhana/templates/create_challenge.html:13
 msgid "Fill in the form to upload a challenge"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:17
+#: gymkhana/templates/create_challenge.html:16
 msgid "Challenge Name:"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:18
+#: gymkhana/templates/create_challenge.html:17
 msgid "Enter Challenge Name"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:21
+#: gymkhana/templates/create_challenge.html:20
 msgid "Question:"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:25
+#: gymkhana/templates/create_challenge.html:24
 msgid "Answer:"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:26
+#: gymkhana/templates/create_challenge.html:25
 msgid "Enter Challenge Answer"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:29
+#: gymkhana/templates/create_challenge.html:28
 msgid "Choose the type of the UML diagram:"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:37
+#: gymkhana/templates/create_challenge.html:36
 msgid "Choose the image of the UML diagram:"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:44
+#: gymkhana/templates/create_challenge.html:43
 msgid "Set the points of the challenge:"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:45
+#: gymkhana/templates/create_challenge.html:44
 msgid "Enter Challenge Points (1 to 10)"
 msgstr ""
 
-#: gymkhana/templates/create_challenge.html:47
+#: gymkhana/templates/create_challenge.html:46
 msgid "upload challenge"
 msgstr ""
 
@@ -86,23 +86,23 @@ msgstr ""
 msgid "CREATE GAME"
 msgstr ""
 
-#: gymkhana/templates/create_game.html:14
+#: gymkhana/templates/create_game.html:13
 msgid "Add Gamnes"
 msgstr ""
 
-#: gymkhana/templates/create_game.html:18
+#: gymkhana/templates/create_game.html:17
 msgid "Game Title"
 msgstr ""
 
-#: gymkhana/templates/create_game.html:19
+#: gymkhana/templates/create_game.html:18
 msgid "Enter Game Name"
 msgstr ""
 
-#: gymkhana/templates/create_game.html:22
+#: gymkhana/templates/create_game.html:21
 msgid "Choose one or more challenge for your games."
 msgstr ""
 
-#: gymkhana/templates/create_game.html:30
+#: gymkhana/templates/create_game.html:29
 msgid "upload game"
 msgstr ""
 
@@ -118,8 +118,20 @@ msgstr ""
 msgid "You can login for more features!"
 msgstr ""
 
+#: gymkhana/templates/home.html:26
+msgid "Click here"
+msgstr ""
+
 #: gymkhana/templates/profile.html:8
 msgid "PROFILE"
+msgstr ""
+
+#: gymkhana/templates/profile.html:15
+msgid "Hello,"
+msgstr ""
+
+#: gymkhana/templates/profile.html:16
+msgid "Points:"
 msgstr ""
 
 #: gymkhana/templates/profile.html:28
@@ -128,6 +140,10 @@ msgstr ""
 
 #: gymkhana/templates/profile.html:35
 msgid "CREATE A GAME!"
+msgstr ""
+
+#: gymkhana/templates/profile.html:40
+msgid "Logout"
 msgstr ""
 
 #: gymkhana/templates/registration/login.html:6
@@ -140,6 +156,10 @@ msgstr ""
 
 #: gymkhana/templates/registration/login.html:37
 msgid "Your username and password didn`t match. Please try again."
+msgstr ""
+
+#: gymkhana/templates/registration/login.html:42
+msgid "login"
 msgstr ""
 
 #: gymkhana/templates/start.html:7
