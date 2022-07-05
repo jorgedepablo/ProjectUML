@@ -5,14 +5,15 @@ from django.shortcuts import HttpResponse
 from django.http import Http404, HttpResponseRedirect
 from django.template import Template, Context, loader
 from django.shortcuts import render
-#from django.utils.translation import gettext_lazy as _
 from gymkhana.utils import *
 from .models import *
 from .forms import *
 from ProjectUML.settings import TEMPLATES
+from ProjectUML.settings import USE_I18N, USE_L10N, USE_TZ, LANGUAGE_CODE, LANGUAGES
+from django.utils.translation import gettext as _
 # Create your views here.
 
-_ = lambda s: s
+
 
 def start(request): 
     try: 
@@ -124,15 +125,13 @@ def challenge(request):
         raise Http404("No existe")
 
     diagram_type = Diagrams.objects.get(id=challenge.diagram_type_id)
-    diagram_type_name = diagram_type.name 
-    diagram_type_description = diagram_type.description
 
     data = {"challenge_id":challenge_id,
             "challenge_title":challenge.name, 
             "challenge_question":challenge.question, 
             "challenge_image":challenge.image,
-            "diagram_name":_(diagram_type_name),
-            "diagram_description": _(diagram_type_description),
+            "diagram_name":diagram_type.name,
+            "diagram_description":diagram_type.description,
             "last_challenge_id":last_challenge,
             "game_id":game_id}
 

@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-27 20:21+0000\n"
+"POT-Creation-Date: 2022-07-05 19:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Jorge De Pablo jdepablo96@gmail.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: Español\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,8 +26,166 @@ msgid "English"
 msgstr "Inglés"
 
 #: gymkhana/templates/challenge.html:7
-msgid "UML: "
-msgstr "UML: "
+msgid "Class Diagram"
+msgstr "Diagrama de Clases"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Use Case Diagram"
+msgstr "Diagrama de Casos de Uso"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Interaction Diagram"
+msgstr "Diagrama de Interacción"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Activity Diagram"
+msgstr "Diagrama de Actividad"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Deployment Diagram"
+msgstr "Diagrama de Despliegue"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Component Diagram"
+msgstr "Diagrama de Componentes"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Object Diagram"
+msgstr "Diagrama de Objetos"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Package Diagram"
+msgstr "Diagrama de Paquetes"
+
+#: gymkhana/templates/challenge.html:7
+msgid "Composite Structure Diagram"
+msgstr "Diagrama de Estructura Compuesta"
+
+#: gymkhana/templates/challenge.html:7
+msgid "State Machine Diagram"
+msgstr "Diagrama de Máquina de Estados"
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"This type of diagrams provides the mechanisms to define the structure "
+"of a static system. It shows the classes of the system, their attributes, "
+"methods and the relationships and between the objects."
+msgstr ""
+"Este tipo de diagramas proporciona los mecanismos para definir la "
+"estructura de un sistema estático. Muestra las clases del sistema, "
+"sus atributos, métodos y las relaciones y entre los objetos."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"A use case diagram is a graphical depiction of a user's possible interactions "
+"with a system. A use case diagram shows various use cases and different types "
+"of users the system has and will often be accompanied by other types "
+"of diagrams as well."
+msgstr ""
+"Un diagrama de casos de uso es una representación gráfica de las "
+"interacciones posibles con un sistema. Un diagrama de casos de uso muestra "
+"variados casos de uso y diferentes tipos de usuarios que el sistema tiene "
+"y a menudo se acompaña de otros tipos de diagramas también."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"The purpose of interaction diagrams is to visualize the interactive "
+"behavior of the system. Visualizing the interaction is a difficult task. "
+"Hence, the solution is to use different types of models to capture the "
+"different aspects of the interaction."
+msgstr ""
+"El objetivo de diagramas de interacción es visualizar el comportamiento "
+"interactivo del sistema. Visualizar la interacción es una tarea difícil. "
+"Por lo tanto, la solución es utilizar diferentes tipos de modelos para "
+"capturar las diferentes aspectos de la interacción."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"A flowchart is a type of diagram that represents a workflow or process. "
+"A flowchart can also be defined as a diagrammatic representation of an "
+"algorithm, a step-by-step approach to solving a task.  The flowchart shows "
+"the steps as boxes of various kinds, and their order by connecting the boxes "
+"with arrows. This diagrammatic representation illustrates a solution model "
+"to a given problem."
+msgstr ""
+"Un diagrama de flujo es un tipo de diagrama que representa un flujo de trabajo "
+"o un proceso. Un diagrama de flujo también se define como una representación "
+"diagramática de un algoritmo, una aproximación paso-a-paso a resolver un "
+"problema. El diagrama de flujo muestra los pasos como cajas de varios tipos, "
+"y su orden por conectar las cajas con flechas. Esta representación "
+"diagramática ilustra un modelo de solución a un problema dado."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"This type of diagram shows the execution architecture of a system, "
+"including the hardware execution environments and software execution "
+"environments and the middleware that connects them. It mainly helps "
+"to understand and model the hardware topology of a system and how it "
+"is deployed."
+msgstr ""
+"Esta clase de diagrama muestra la arquitectura de ejecución de un "
+"sistema, incluyendo los entornos de ejecución de hardware o software y "
+"el middleware que los conecta. Principalmente ayudan a entender y "
+"modelar la topología hardware de un sistema y como se despliega."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"The diagrams of components represent a software system divided into "
+"components and shows the dependencies between the components. They are "
+"really useful to see what components can share between systems or "
+"between different parts of a system."
+msgstr ""
+"Los diagramas de componentes representan un sistema software dividido "
+"en componentes y muestra las dependencias entre los componentes. Son "
+"realmente útiles para ver qué componentes pueden compartirse entre "
+"sistemas o entre diferentes partes de un sistema."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"This kind of diagrams offers a partial or complete view of the objects "
+"of a system. They are diagrams of instances that include objects and "
+"data. These diagrams are linked to the class diagrams, showing the state "
+"of the system at a certain point in time."
+msgstr ""
+"Este tipo de diagramas ofrece una vista parcial o completa de los "
+"objetos de un sistema. Es un gráfico de instancias que incluye objetos y "
+"datos. Estos diagramas están ligados a a los diagramas de clases, muestra "
+"el estado del sistema en un punto determinado del tiempo."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"Represents the dependencies between the packages that compose a system. "
+"Shows how this is divided into logical groups and the dependencies "
+"between those groups. These diagrams show the decomposition of the "
+"logical hierarchy of a system."
+msgstr ""
+"Representa las dependencias entre los paquetes que componen un sistema. "
+"Muestra como este está dividido en agrupaciones lógicas y las dependencias "
+"entre esas agrupaciones. Estos diagramas muestran la descomposición de la "
+"jerarquía lógica de un sistema."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"This type of diagram shows the internal structure of a class and the "
+"relationships and interactions between the different parts of this. Show "
+"the role defined for each element and the composed structure as the set "
+"of those elements interconnected."
+msgstr ""
+"Esta clase de diagrama muestra la estructura interna de una clase y las "
+"relaciones e interacciones entre las distintas partes esta. Muestran el "
+"rol definido que tiene cada elemento y la estructura compuesta como el "
+"conjunto de esos elementos interconectados."
+
+#: gymkhana/templates/challenge.html:13
+msgid ""
+"A State Machine Diagram, known in some cases as a state diagram, models "
+"the behavior of an object. It specifies the sequence of events that "
+"occur during the execution of this object."
+msgstr ""
+"Un diagrama de máquina de estados, conocidos en ocasiones como diagrama "
+"de estados modela el comportamiento de un objeto. Especifican la "
+"secuencia de eventos que sufre este determinado objeto durante su "
+"tiempo de ejecución."
 
 #: gymkhana/templates/challenge.html:24
 msgid "send"
@@ -206,23 +364,3 @@ msgstr "Volver al reto"
 #: gymkhana/templates/wrong.html:20
 msgid "or"
 msgstr "o"
-
-#~ msgid "CORRECT"
-#~ msgstr "CORRECTO"
-
-#~ msgid "NOT CORRECT"
-#~ msgstr "INCORRECTO"
-
-#~ msgid "Class Diagram"
-#~ msgstr "Diagrama de clases"
-
-#~ msgid ""
-#~ "A class diagram in the Unified Modeling Language (UML) is a type of "
-#~ "static structure diagram that describes the structure of a system by "
-#~ "showing the system's classes, their attributes, operations (or methods), "
-#~ "and the relationships among objects."
-#~ msgstr ""
-#~ "Un diagrama de clases en el Lenguaje Unificado Modelado (UML) es un tipo "
-#~ "de diagrama estructural estático que describe la estructura de un sistema "
-#~ "mostrando las clases del sistema, sus atributos, operaciones (o métodos) "
-#~ "y las relaciones entre objetos."
